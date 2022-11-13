@@ -9,7 +9,7 @@ body{
 .banner{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/back2.webp');
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('../back2.webp');
     background-size: cover;
     background-position: center;
     /* box-shadow: 0 15px 10px red; */
@@ -105,4 +105,4 @@ body{
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), rgb(255, 255, 255); ;
     background-size: cover;
-}
+}    

@@ -1,10 +1,10 @@
 
-@extends('layouts/layoutUser')
+@extends('layout/layout')
 @section('content')
 
     <div class="banner">
         <div class="navbar">
-            <img src="./images/Logo2White.png" class="logo">
+            <img src="../Logo2White.png" class="logo">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>

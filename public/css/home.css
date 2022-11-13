@@ -109,7 +109,7 @@ body{
 .part2{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), rgb(255, 255, 255); ;
+    background: #FFE9B1 ;
     background-size: cover;
 }    
 .part2 h1{

@@ -53,3 +53,5 @@ Route::name('user.')->group(function(){
 
    Route::get("/auth/google",[AuthorizationController::class,"continueWithGoogle"]);
    Route::get("/auth/google/callback",[AuthorizationController::class,"registartionOrLoginWithGoogle"]);
+   Route::get("/auth/git",[AuthorizationController::class,"continueWithGitHub"]);
+   Route::get("/auth/git/callback",[AuthorizationController::class,"registartionOrLoginWithGitHub"]);

@@ -13,7 +13,17 @@ class AuthorizationController extends Controller
     public function registartionOrLoginWithGoogle()
     {
         $user = Socialite::driver('google')->stateless()->user();
+
         
+    }
+    public function continueWithGitHub()
+    {
+        return Socialite::driver("github")->stateless()->redirect();
+    }
+    public function registartionOrLoginWithGitHub()
+    {
+        $user = Socialite::driver('github')->stateless()->user();
         
+        dd($user);
     }
 }

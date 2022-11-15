@@ -14,7 +14,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
                 <li><a href="#">Your cabinet</a></li>
-                <li><a href="#">Log in</a></li>
+                <li><a href="/login">Log in</a></li>
             </ul>
         </div>
         <div class="content">

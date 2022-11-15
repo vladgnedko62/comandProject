@@ -42,6 +42,9 @@
     margin: 0 7px;
     opacity: 0.8;
 }
+.back .fa-google, .fa-github, .fa-linkedin{
+    transition: all 0.35s ease-in-out;
+}
 .back .fa-google:hover{
     color: red;
 }

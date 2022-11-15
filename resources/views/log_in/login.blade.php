@@ -24,7 +24,7 @@
           <form method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')
-            <label> {{$message}}</label>
+            <label style="color: red;"> {{$message}}</label>
             <br>
           @enderror
           <p>Login into Google</p>

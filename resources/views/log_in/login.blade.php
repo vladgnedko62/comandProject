@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="back animated">
-          <h2>Login to Your Account</h2>
+          <h2>Login using sozial networks</h2>
           <form method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')

@@ -40,10 +40,17 @@
 .back #intoG{
     font-size: 35px;
     margin: 0 7px;
+    opacity: 0.8;
 }
-/* .back h2{
-    color: black
-} */
+.back .fa-google:hover{
+    color: red;
+}
+.back .fa-linkedin:hover{
+    color: cornflowerblue;
+}
+.back .fa-github:hover{
+    color: black;
+}
 .back h1 {
     position: relative;
     overflow: hidden;
@@ -81,6 +88,7 @@
     border-radius: 15px;
     transition: all 0.35s linear;
     box-shadow: 0px 0px 3px black;
+    cursor: pointer;
 }
 .back button:hover{
     border: 1px solid gray;

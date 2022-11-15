@@ -14,7 +14,6 @@ class LoginController extends Controller
     
   
   
-  
        $formFields = $req->only(['email','password']);
    
        if(Auth::attempt($formFields)){
@@ -25,6 +24,5 @@ class LoginController extends Controller
        return redirect()->to(route(name:'user.login'))->withErrors([
           'formError' => "Не удалось авторизоваться"
       ]);
-  
      }
 }

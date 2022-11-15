@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="back animated">
-          <h2>Login using sozial networks</h2>
+          <h2>Login using social networks</h2>
           <form method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')
@@ -33,8 +33,8 @@
 
           <h1><span>or</span></h1>
 
-          <input type="text" name="email" placeholder="Input Email">
-          <input type="text" name="password" placeholder="Input Password">
+          <input type="text" name="email" placeholder="Input Email" required>
+          <input type="text" name="password" placeholder="Input Password" required>
           <button type="submit">Sign In</button>
 
           <!-- <a href="https://twitter.com/Dave_Conner" class="btn btn-1">

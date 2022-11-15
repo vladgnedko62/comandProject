@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,10 @@ Route::name('user.')->group(function(){
     Route::post('/register',[\App\Http\Controllers\RegisterController::class,'save']);
    
    });
+
+   Route::get("/auth/google",[AuthorizationController::class,"continueWithGoogle"]);
+   Route::get("/auth/google/callback",[AuthorizationController::class,"registartionOrLoginWithGoogle"]);
+   Route::get("/auth/git",[AuthorizationController::class,"continueWithGitHub"]);
+   Route::get("/auth/git/callback",[AuthorizationController::class,"registartionOrLoginWithGitHub"]);
+   Route::get("/auth/link",[AuthorizationController::class,"continueWithLinkedIn"]);
+   Route::get("/auth/link/callback",[AuthorizationController::class,"registartionOrLoginWithLinkedIn"]);

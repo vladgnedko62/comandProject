@@ -26,4 +26,14 @@ class AuthorizationController extends Controller
         
         dd($user);
     }
+    public function continueWithLinkedIn()
+    {
+        return Socialite::driver("linkedin")->stateless()->redirect();
+    }
+    public function registartionOrLoginWithLinkedIn()
+    {
+        $user = Socialite::driver('linkedin')->stateless()->user();
+        
+        dd($user);
+    }
 }

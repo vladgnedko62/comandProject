@@ -10,18 +10,20 @@ class AnimationForMovies{
         })
         categoryes.forEach(function(ev){
             let pos=document.documentElement.scrollTop;
-            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             let categoryPosition=parseInt(ev.offsetTop)-parseInt(window.innerHeight)+50;
             if(pos>=categoryPosition){
               
-                if(!ev.classList.contains("fadeInRight")&&!ev.classList.contains("fadeInLeft")){
+                if(!ev.classList.contains("fadeInLeft")
+                    ||!ev.classList.contains("fadeInUp")
+                    ||!ev.classList.contains("fadeInRight")){
                     ev.style.opacity=1;
+                    // console.log("qe");
                     if(lefOrRi==0){
-                        ev.classList.add("fadeInLeftBig");
+                        ev.classList.add("fadeInLeft");
                     }else if(lefOrRi==1){
-                        ev.classList.add("fadeInUpBig");
+                        ev.classList.add("fadeInUp");
                     }else if(lefOrRi==2){
-                        ev.classList.add("fadeInRightBig");
+                        ev.classList.add("fadeInRight");
                     }
                     lefOrRi++;
                 }
@@ -34,15 +36,17 @@ class AnimationForMovies{
                 let pos=document.documentElement.scrollTop;
                 let categoryPosition=parseInt(ev.offsetTop)-parseInt(window.innerHeight)+50;
                 if(pos>=categoryPosition){
-                    if(!ev.classList.contains("fadeInRight")&&!ev.classList.contains("fadeInLeft")){
+                    if(!ev.classList.contains("fadeInLeft")
+                    &&!ev.classList.contains("fadeInUp")
+                    &&!ev.classList.contains("fadeInRight")){
                         ev.style.opacity=1;
                         console.log(1);
-                        if(lefOrRi==0){
-                            ev.classList.add("fadeInLeftBig");
-                        }else if(lefOrRi==1){
-                            ev.classList.add("fadeInUpBig");
-                        }else if(lefOrRi==2){
-                            ev.classList.add("fadeInRightBig");
+                        if(lefOrRiQ==0){
+                            ev.classList.add("fadeInLeft");
+                        }else if(lefOrRiQ==1){
+                            ev.classList.add("fadeInUp");
+                        }else if(lefOrRiQ==2){
+                            ev.classList.add("fadeInRight");
                         }
                         lefOrRiQ++;
                     }
@@ -54,5 +58,6 @@ class AnimationForMovies{
         }
     }
 }
-    new AnimationForMovies().init()
+     new AnimationForMovies().init()
 
+  

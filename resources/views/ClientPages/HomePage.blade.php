@@ -9,7 +9,7 @@
 
     <div class="banner">
         <div class="navbar animated fadeInDown">
-            <img src="../storage/images/logoMain.png" class="logo">
+            <img src="images/logoMain.png" class="logo">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
@@ -31,28 +31,28 @@
     <a id="howflag"></a>
     <div class="part2">  
         <div class="About">
-            <img src="../storage/images/logoAbout.png" class="clock">
+            <img src="images/logoAbout.png" class="clock">
             <div class="vl"></div>
             <p>We are creator of this web-site. We hope that our solution will bring you convenience and benefit. Enjoy using!</p>
         </div>
         <h1>We provide</h1>
         <div class="blockAbout">
             <div class="columns animated ">
-                <img src="../storage/images/sofa.png" class="plusImg">
+                <img src="images/sofa.png" class="plusImg">
                 <div class="aboutUs">
                     <h2>Convenience</h2>
                     <span>We paid maximum attention to the interface, it turned out to be clean and easy, but at the same time focuses on the main task - reminders.  </span>               
                 </div>
             </div>
             <div class="columns animated ">
-                <img src="../storage/images/clocks.png" class="plusImg">
+                <img src="images/clocks.png" class="plusImg">
                 <div class="aboutUs">
                     <h2>Time</h2>
                     <span>With our task manager you can regulate your plans, sort them, see future and completed ones. Thereby saving your time.</span> 
                 </div>
             </div>
             <div class="columns animated">
-                <img src="../storage/images/guarantee.png" class="plusImg">
+                <img src="images/guarantee.png" class="plusImg">
                 <div class="aboutUs">
                     <h2>Guarantee</h2>
                     <span>We guarantee that you will never forget anything with us.</span>
@@ -80,5 +80,5 @@
         </p>
     </section>
 
-    <script src="../storage/jsFiles/mainPageAnim.js"></script>
+    <script src="jsFiles/mainPageAnim.js"></script>
 @endsection

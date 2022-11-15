@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.back{
+    width: 30%;
+    padding: 23px;
+    /* height: 500px; */
+    margin: 50px auto;
+    box-shadow: 0px 8px 16px black;
+    background-color: rgba(255, 233, 177, 0.5) ;
+    color: white;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+}
+
+.back input
+{
+    margin: 25px auto;
+    display: block;
+    width: 90%;
+    outline:none;
+    border: none;
+    height: 40px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px black;
+}
+.back a {
+    text-decoration: none;
+    color: white;
+}
+.back p{
+    margin: 10px auto 10px auto;
+    font-size: 20px;
+}
+.back #intoG{
+    font-size: 35px;
+    margin: 0 7px;
+}
+/* .back h2{
+    color: black
+} */
+.back h1 {
+    position: relative;
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    
+  }
+  .back h1 > span {
+    display: inline-block;
+    margin: 0 .4em;
+    font-size: 17px;
+  }
+  .back h1 > span:before,
+  .back h1 > span:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-top: 2px solid #4e4e4e;
+    margin-top: .6em;
+  }
+  .back h1 > span:before {
+    margin-left: -102%;
+  }
+  .back h1 > span:after {
+    margin-left: 2%;
+  }
+
+.back button{
+    margin-top: 10px;
+    width: 35%;
+    border: 1px solid white;
+    height: 40px;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.35s linear;
+    box-shadow: 0px 0px 3px black;
+}
+.back button:hover{
+    border: 1px solid gray;
+
+}
+.back .userN{
+    margin-top: 20px;
+    font-size: 15px;
+}
+.back #reg{
+    font-size: 18px;
+    text-decoration: underline;
+    opacity: 0.9;
+}
+.back #reg:hover{
+    opacity: 2;
+}

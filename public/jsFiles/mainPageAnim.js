@@ -60,4 +60,10 @@ class AnimationForMovies{
 }
      new AnimationForMovies().init()
 
-  
+     let bttn = document.querySelector("#startBttn");
+     
+     setTimeout(()=>{
+        bttn.classList.remove("zoomIn");
+        bttn.classList.add("infinite")
+        bttn.classList.add("pulse");
+     },900);

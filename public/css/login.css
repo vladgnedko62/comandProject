@@ -1,16 +1,28 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.back{
+
+.banner {
+    display: flex;
+    flex-direction: column;
+}
+
+.back {
     width: 500px;
     padding: 23px;
     /* height: 500px; */
     margin: 50px auto;
     box-shadow: 0px 8px 16px black;
+<<<<<<< Updated upstream
     background: rgb(9,0,106);
 background: linear-gradient(0deg, rgba(9,0,106,1) 0%, rgba(66,0,147,1) 100%);
+=======
+    /* background: linear-gradient(rgba(0,0,0,0.25), rgb(182, 90, 90)), #060607;; */
+    background: rgb(142,115,162);
+background: linear-gradient(0deg, rgba(142,115,162,1) 0%, rgba(140,92,200,1) 100%);
+>>>>>>> Stashed changes
     color: white;
     border-radius: 24px;
     text-align: center;
@@ -18,84 +30,105 @@ background: linear-gradient(0deg, rgba(9,0,106,1) 0%, rgba(66,0,147,1) 100%);
     min-width: 45px;
 }
 
-.back input
-{
+.back input {
     margin: 25px auto 10px auto;
     display: block;
     width: 90%;
-    outline:none;
+    outline: none;
     border: none;
     height: 40px;
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0px 0px 5px black;
 }
+
 .back a {
     text-decoration: none;
     color: white;
 }
-.back p{
+
+.back p {
     margin: 10px auto 10px auto;
     font-size: 20px;
 }
-.back #intoG{
+
+.back #intoG {
     font-size: 35px;
     margin: 0 7px;
     opacity: 0.8;
 }
-.back .fa-google, .fa-github, .fa-linkedin{
+
+.back .fa-google,
+.fa-github,
+.fa-linkedin {
     transition: all 0.35s ease-in-out;
 }
-.back .fa-google:hover{
+
+.back .fa-google:hover {
     color: red;
 }
-.back .fa-linkedin:hover{
+
+.back .fa-linkedin:hover {
     color: cornflowerblue;
 }
+<<<<<<< Updated upstream
 .back .fa-github:hover{
+=======
+
+.back .fa-github:hover {
+>>>>>>> Stashed changes
     color: black;
 }
+
 .back h1 {
     position: relative;
     overflow: hidden;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    
-  }
-  .back h1 > span {
+
+}
+
+.back h1>span {
     display: inline-block;
     margin: 0 .4em;
     font-size: 17px;
-  }
-  .back h1 > span:before,
-  .back h1 > span:after {
+}
+
+.back h1>span:before,
+.back h1>span:after {
     content: '';
     position: absolute;
     width: 100%;
     border-top: 2px solid #4e4e4e;
     margin-top: .6em;
-  }
-  .back h1 > span:before {
+}
+
+.back h1>span:before {
     margin-left: -102%;
-  }
-  .back h1 > span:after {
+}
+
+.back h1>span:after {
     margin-left: 2%;
-  }
-.back button:hover{
+}
+
+.back button:hover {
     border: 1px solid gray;
 
 }
-.back .userN{
+
+.back .userN {
     margin-top: 20px;
     font-size: 15px;
 }
-.back #reg{
+
+.back #reg {
     font-size: 18px;
     text-decoration: underline;
     opacity: 0.9;
 }
-.back #reg:hover{
+
+.back #reg:hover {
     opacity: 2;
 }
 
@@ -108,7 +141,7 @@ background: linear-gradient(0deg, rgba(9,0,106,1) 0%, rgba(66,0,147,1) 100%);
     margin: 20px auto;
     border-radius: 25px;
     font-weight: bold;
-    font-size: 13px!important;
+    font-size: 13px !important;
     border: 2px solid rgb(5, 5, 5);
     background: transparent;
     cursor: pointer;
@@ -117,26 +150,29 @@ background: linear-gradient(0deg, rgba(9,0,106,1) 0%, rgba(66,0,147,1) 100%);
     letter-spacing: 1px;
 
 }
-.back  .btn-5 {
+
+.back .btn-5 {
     border: 0 solid;
     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
     outline: 1px solid;
     outline-color: rgba(255, 255, 255, .5);
     outline-offset: 0px;
     text-shadow: none;
-    transition: all 1150ms cubic-bezier(0.19, 1, 0.22, 1); 
-  } 
-  
- .back .btn-5:hover {
+    transition: all 1150ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.back .btn-5:hover {
     border: 1px solid;
     box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
-    text-shadow: 1px 1px 2px #427388; 
-  }
-  #logFooter{
-    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.75)), #7743DB;
+    text-shadow: 1px 1px 2px #427388;
 }
-.back label{
+
+#logFooter {
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)), #7743DB;
+}
+
+.back label {
     color: red;
 }

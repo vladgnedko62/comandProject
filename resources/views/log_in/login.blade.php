@@ -34,9 +34,15 @@
 
           <h1><span>or</span></h1>
 
+<<<<<<< Updated upstream
           <input type="text" name="email" placeholder="Input Email">
           <input type="text" name="password" placeholder="Input Password">
           <a href="#" onclick="document.getElementById('joinForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+=======
+          <input type="email"  name="email" placeholder="Input Email" require>
+          <input type="password" require name="password" placeholder="Input Password">
+          <a  href="#" onclick="document.getElementById('joinForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+>>>>>>> Stashed changes
 
           </form>
           

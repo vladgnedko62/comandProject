@@ -20,14 +20,14 @@
             </ul>
         </div>
         <div class="back animated">
-          <h2>Login using sozial networks</h2>
-          <form method="post" action="{{route('user.login')}}">
+          <h2>Login to Your Account</h2>
+          <form id="jForm" method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')
             <label style="color: red;"> {{$message}}</label>
             <br>
           @enderror
-          <p>Login into Google</p>
+          <p>Login using sozial networks</p>
           <a id="intoG" href="#"><i class="fab fa-google"></i></a>
           <a id="intoG" href="#"><i class="fab fa-linkedin"></i></a>
           <a id="intoG" href="#"><i class="fab fa-github"></i></a>
@@ -36,21 +36,13 @@
 
           <input type="text" name="email" placeholder="Input Email">
           <input type="text" name="password" placeholder="Input Password">
-          <button type="submit">Sign In</button>
-
-          <!-- <a href="https://twitter.com/Dave_Conner" class="btn btn-1">
-            <div class="svg">
-              <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-            </div>
-          Hover
-          </a> -->
-
-          </form>
-          
+          <a href="#" onclick="document.getElementById('jForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+          </form>     
           <p class="userN">New user? <a id="reg" href="/register">Register</a></p>
         </div>
     </div>
-    <section class="footer">
+
+    <section id="logFooter" class="footer">
         <div class="social">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-snapchat"></i></a>

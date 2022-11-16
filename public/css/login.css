@@ -15,8 +15,8 @@
     /* height: 500px; */
     margin: 50px auto;
     box-shadow: 0px 8px 16px black;
-    background: rgb(9, 0, 106);
-    background: linear-gradient(0deg, rgba(9, 0, 106, 1) 0%, rgba(66, 0, 147, 1) 100%);
+    background: rgb(142,115,162);
+    background: linear-gradient(0deg, rgba(142,115,162,1) 0%, rgba(140,92,200,1) 100%);
     color: white;
     border-radius: 24px;
     text-align: center;

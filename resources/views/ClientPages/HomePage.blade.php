@@ -23,7 +23,7 @@
             <p>Manage your notifications.</p>
             <div class="buttons">
                 <a href="#howflag" class="btn btn-5 animated zoomIn"><span></span>ABOUT US</a>
-                <a id="startBttn" href="#" class="btn btn-5 animated zoomIn "><span></span>START</a>
+                <a id="startBttn" href="/login" class="btn btn-5 animated zoomIn "><span></span>START</a>
             </div>
         </div>
     </div>

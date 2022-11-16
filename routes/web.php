@@ -3,7 +3,7 @@
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,9 +52,23 @@ Route::name('user.')->group(function(){
    });
    
 
-   Route::get("/auth/google",[AuthorizationController::class,"continueWithGoogle"]);
-   Route::get("/auth/google/callback",[AuthorizationController::class,"registartionOrLoginWithGoogle"]);
-   Route::get("/auth/git",[AuthorizationController::class,"continueWithGitHub"]);
-   Route::get("/auth/git/callback",[AuthorizationController::class,"registartionOrLoginWithGitHub"]);
-   Route::get("/auth/link",[AuthorizationController::class,"continueWithLinkedIn"]);
+   Route::prefix('auth')->group(function(){
+       Route::get("/google",[AuthorizationController::class,'continueWith'])->name('google');
+       Route::get("/google/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('google');
+
+
+       Route::get("/git",[AuthorizationController::class,'continueWith'])->name('github');
+       Route::get("/git/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('github');
+
+
+       Route::get("/linkedin",[AuthorizationController::class,'continueWith'])->name('linkedin');
+   });
+
+ //  Route::get("/auth/google",[AuthorizationController::class,"continueWithGoogle"]);
+ //  Route::get("/auth/google/callback",[AuthorizationController::class,"registartionOrLoginWithGoogle"])->name('google_id');
+
+
+
+
+ //  Route::get("/auth/link",[AuthorizationController::class,"continueWithLinkedIn"]);
    Route::get("/auth/link/callback",[AuthorizationController::class,"registartionOrLoginWithLinkedIn"]);

@@ -15,27 +15,31 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
-                <li><a href="#">Your cabinet</a></li>
                 <li><a href="/login">Log in</a></li>
             </ul>
         </div>
         <div class="back animated">
           <h2>Registration</h2>
+          <p>Registration using sozial networks</p>
+          <a id="intoG" href="#"><i class="fab fa-google"></i></a>
+          <a id="intoG" href="#"><i class="fab fa-linkedin"></i></a>
+          <a id="intoG" href="#"><i class="fab fa-github"></i></a>
+          <h1><span>or</span></h1>
           <form id="regForm" style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
               @csrf
-              <input type="text" name="email" placeholder="Input Email">
+              <input type="email" require name="email" placeholder="Input Email">
               @error('email')
                 <label> {{$message}}</label>
               @enderror
-              <input type="text" name="name" placeholder="Input Name">
+              <input type="text" minlength="3" maxlength="20" require name="name" placeholder="Input Name">
               @error('name')
                 <label> {{$message}}</label>
               @enderror
-              <input type="password" name="password" placeholder="Input Password">
+              <input type="password" minlength="6" maxlength="15" require name="password" placeholder="Input Password">
               @error('password')
                 <label> {{$message}}</label>
               @enderror
-              <input type="password" name="password_check" placeholder="Repeat Password">
+              <input type="password" minlength="6" maxlength="15" require name="password_check" placeholder="Repeat Password">
               <a href="#" onclick="document.getElementById('regForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
 
               </form>

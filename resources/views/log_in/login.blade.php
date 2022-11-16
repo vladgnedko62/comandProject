@@ -26,7 +26,7 @@
             <label style="color: red;"> {{$message}}</label>
             <br>
           @enderror
-          <p>Login using sozial networks</p>
+          <p>Login into Google</p>
           <a id="intoG" href="/auth/google"><i class="fab fa-google"></i></a>
           <a id="intoG" href="/auth/link"><i class="fab fa-linkedin"></i></a>
           <a id="intoG" href="/auth/git"><i class="fab fa-github"></i></a>

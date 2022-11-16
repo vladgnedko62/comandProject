@@ -15,12 +15,11 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
-                <li><a href="#">Your cabinet</a></li>
-                <li><a href="/login">Log in</a></li>
-            </ul>
+                <li><a href="/login">Log in</a></li>       
+            </ul> 
         </div>
         <div class="back animated">
-          <h2>Login using sozial networks</h2>
+          <h2>Login in Your Account</h2>
           <form id="joinForm" method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')
@@ -34,9 +33,14 @@
 
           <h1><span>or</span></h1>
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
           <input type="text" name="email" placeholder="Input Email">
           <input type="text" name="password" placeholder="Input Password">
+=======
+          <input type="email" require name="email" placeholder="Input Email">
+          <input type="password" require name="password" placeholder="Input Password">
+>>>>>>> 1f708caedd1517d3f2bbd6e55357dae41f7b7208
           <a href="#" onclick="document.getElementById('joinForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
 =======
           <input type="email"  name="email" placeholder="Input Email" require>

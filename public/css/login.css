@@ -9,8 +9,8 @@
     /* height: 500px; */
     margin: 50px auto;
     box-shadow: 0px 8px 16px black;
-    /* background: linear-gradient(rgba(0,0,0,0.25), rgb(182, 90, 90)), #060607;; */
-    background: linear-gradient(rgba(0,0,0,0.25), rgb(57, 47, 119)), #060607;;
+    background: rgb(9,0,106);
+background: linear-gradient(0deg, rgba(9,0,106,1) 0%, rgba(66,0,147,1) 100%);
     color: white;
     border-radius: 24px;
     text-align: center;
@@ -53,7 +53,7 @@
     color: cornflowerblue;
 }
 .back .fa-github:hover{
-    color: rgb(0, 229, 0);
+    color: black;
 }
 .back h1 {
     position: relative;

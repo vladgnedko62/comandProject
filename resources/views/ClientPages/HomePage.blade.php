@@ -1,6 +1,7 @@
 
 @extends('layout/layout')
 @section('head')
+<link rel="stylesheet" href="./css/animate.css" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <title>Home</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -9,11 +10,11 @@
 
     <div class="banner">
         <div class="navbar animated fadeInDown">
-            <img src="images/logoMain.png" class="logo">
+            <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
-                <li><a href="/auth/google">Your cabinet</a></li>
+                <li><a href="#">Your cabinet</a></li>
                 <li><a href="/login">Log in</a></li>
             </ul>
         </div>
@@ -22,9 +23,7 @@
             <p>Manage your notifications.</p>
             <div class="buttons">
                 <a href="#howflag" class="btn btn-5 animated zoomIn"><span></span>ABOUT US</a>
-                <a href="#" class="btn btn-5 animated zoomIn "><span></span>START</a>
-
-                <!-- infinite pulse -->
+                <a id="startBttn" href="#" class="btn btn-5 animated zoomIn "><span></span>START</a>
             </div>
         </div>
     </div>

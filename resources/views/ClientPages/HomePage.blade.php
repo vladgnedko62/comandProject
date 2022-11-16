@@ -14,8 +14,11 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
-                <li><a href="#">Your cabinet</a></li>
-                <li><a href="/login">Log in</a></li>
+                @if(Auth::user()!=null)
+                    <li><a href="/login">{{Auth::user()->name}}</a></li>
+                @else
+                    <li><a href="/login">Log in</a></li>
+                @endif       
             </ul>
         </div>
         <div class="content">

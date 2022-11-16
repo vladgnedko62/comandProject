@@ -21,7 +21,7 @@
         </div>
         <div class="back animated">
           <h2>Login using sozial networks</h2>
-          <form method="post" action="{{route('user.login')}}">
+          <form id="joinForm" method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')
             <label style="color: red;"> {{$message}}</label>
@@ -36,14 +36,7 @@
 
           <input type="text" name="email" placeholder="Input Email">
           <input type="text" name="password" placeholder="Input Password">
-          <button type="submit">Sign In</button>
-
-          <!-- <a href="https://twitter.com/Dave_Conner" class="btn btn-1">
-            <div class="svg">
-              <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-            </div>
-          Hover
-          </a> -->
+          <a href="#" onclick="document.getElementById('joinForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
 
           </form>
           

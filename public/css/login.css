@@ -98,8 +98,8 @@
 .back #reg:hover{
     opacity: 2;
 }
-
 .back .btn {
+    
     height: 40px;
     display: block;
     width: 150px;

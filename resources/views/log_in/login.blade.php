@@ -10,7 +10,7 @@
 @section('content')
 <div class="mainBanner">
 <div class="banner">
-        <div class="navbar animated">
+        <div style="opacity: 0" class="navbar animated">
             <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
                 <li><a href="#">Home</a></li>
@@ -18,7 +18,7 @@
                 <li><a href="/login">Log in</a></li>       
             </ul> 
         </div>
-        <div class="back animated">
+        <div style="opacity: 0" class="back animated">
           <h2>Login in Your Account</h2>
           <form id="joinForm" method="post" action="{{route('user.login')}}">
           @csrf
@@ -33,9 +33,9 @@
 
           <h1><span>or</span></h1>
 
-          <input type="email" require name="email" placeholder="Input Email">
-          <input type="password" require name="password" placeholder="Input Password">
-          <a href="#" onclick="document.getElementById('joinForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+          <input type="email" required name="email" placeholder="Input Email">
+          <input type="password" required name="password" placeholder="Input Password">
+          <button type="submit" class="btn btn-5"><span></span>Sign In</button> 
 
           </form>
           
@@ -63,4 +63,5 @@
     </section>
     </div>
     <script src="jsFiles/loginPageAnim.js"></script>
+
 @endsection

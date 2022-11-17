@@ -10,7 +10,7 @@
 @section('content')
 <div class="mainBanner">
 <div class="banner">
-        <div class="navbar animated">
+        <div style="opacity: 0" class="navbar animated">
             <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
                 <li><a href="#">Home</a></li>
@@ -18,29 +18,29 @@
                 <li><a href="/login">Log in</a></li>
             </ul>
         </div>
-        <div class="back animated">
+        <div style="opacity: 0" class="back animated">
           <h2>Registration</h2>
           <p>Registration using sozial networks</p>
           <a id="intoG" href="#"><i class="fab fa-google"></i></a>
           <a id="intoG" href="#"><i class="fab fa-linkedin"></i></a>
           <a id="intoG" href="#"><i class="fab fa-github"></i></a>
           <h1><span>or</span></h1>
-          <form id="regForm" style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
+          <form style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
               @csrf
-              <input type="email" require name="email" placeholder="Input Email">
+              <input type="email" required name="email" placeholder="Input Email">
               @error('email')
                 <label> {{$message}}</label>
               @enderror
-              <input type="text" minlength="3" maxlength="20" require name="name" placeholder="Input Name">
+              <input type="text" minlength="3" maxlength="20" required name="name" placeholder="Input Name">
               @error('name')
                 <label> {{$message}}</label>
               @enderror
-              <input type="password" minlength="6" maxlength="15" require name="password" placeholder="Input Password">
+              <input type="password" minlength="6" maxlength="15" required name="password" placeholder="Input Password">
               @error('password')
                 <label> {{$message}}</label>
               @enderror
-              <input type="password" minlength="6" maxlength="15" require name="password_check" placeholder="Repeat Password">
-              <a href="#" onclick="document.getElementById('regForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+              <input type="password" minlength="6" maxlength="15" required name="password_check" placeholder="Repeat Password">
+              <button type="submit" class="btn btn-5"><span></span>Sign In</button> 
 
               </form>
   

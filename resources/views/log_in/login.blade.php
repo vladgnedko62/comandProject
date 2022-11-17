@@ -20,7 +20,7 @@
         </div>
         <div class="back animated">
           <h2>Login in Your Account</h2>
-          <form id="joinForm" method="post" action="{{route('user.login')}}">
+          <form method="post" action="{{route('user.login')}}">
           @csrf
           @error('formError')
             <label style="color: red;"> {{$message}}</label>
@@ -37,7 +37,7 @@
 
           <input type="email"  name="email" placeholder="Input Email" require>
           <input type="password" require name="password" placeholder="Input Password">
-          <a  href="#" onclick="document.getElementById('joinForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+          <button class="btn btn-5"><span></span>Sign In</button> 
 
 
           </form>

@@ -25,7 +25,7 @@
           <a id="intoG" href="#"><i class="fab fa-linkedin"></i></a>
           <a id="intoG" href="#"><i class="fab fa-github"></i></a>
           <h1><span>or</span></h1>
-          <form id="regForm" style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
+          <form style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
               @csrf
               <input type="email" require name="email" placeholder="Input Email">
               @error('email')
@@ -40,7 +40,7 @@
                 <label> {{$message}}</label>
               @enderror
               <input type="password" minlength="6" maxlength="15" require name="password_check" placeholder="Repeat Password">
-              <a href="#" onclick="document.getElementById('regForm').submit()" class="btn btn-5"><span></span>Sign In</a> 
+              <button class="btn btn-5"><span></span>Sign In</button> 
 
               </form>
   

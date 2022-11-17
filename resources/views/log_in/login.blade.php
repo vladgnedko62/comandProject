@@ -35,8 +35,8 @@
 
 
 
-          <input type="email"  name="email" placeholder="Input Email" require>
-          <input type="password" require name="password" placeholder="Input Password">
+          <input type="email" name="email" placeholder="Input Email" required>
+          <input type="password" required name="password" placeholder="Input Password">
           <button class="btn btn-5"><span></span>Sign In</button> 
 
 

@@ -27,19 +27,19 @@
           <h1><span>or</span></h1>
           <form style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
               @csrf
-              <input type="email" require name="email" placeholder="Input Email">
+              <input type="email" required name="email" placeholder="Input Email">
               @error('email')
                 <label> {{$message}}</label>
               @enderror
-              <input type="text" minlength="3" maxlength="20" require name="name" placeholder="Input Name">
+              <input type="text" minlength="3" maxlength="20" required name="name" placeholder="Input Name">
               @error('name')
                 <label> {{$message}}</label>
               @enderror
-              <input type="password" minlength="6" maxlength="15" require name="password" placeholder="Input Password">
+              <input type="password" minlength="6" maxlength="15" required name="password" placeholder="Input Password">
               @error('password')
                 <label> {{$message}}</label>
               @enderror
-              <input type="password" minlength="6" maxlength="15" require name="password_check" placeholder="Repeat Password">
+              <input type="password" minlength="6" maxlength="15" required name="password_check" placeholder="Repeat Password">
               <button class="btn btn-5"><span></span>Sign In</button> 
 
               </form>

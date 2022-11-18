@@ -3,7 +3,6 @@
 @section('head')
 <link rel="stylesheet" href="./css/login.css" type="text/css">
 <link rel="stylesheet" href="./css/animate.css" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <title>Login</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
@@ -33,13 +32,9 @@
 
           <h1><span>or</span></h1>
 
-
-
           <input type="email" name="email" placeholder="Input Email" required>
-          <input type="password" required name="password" placeholder="Input Password">
+          <input type="password" minlength="6" required name="password" placeholder="Input Password">
           <button class="btn btn-5"><span></span>Sign In</button> 
-
-
           </form>
           
           <p class="userN">New user? <a id="reg" href="/register">Register</a></p>

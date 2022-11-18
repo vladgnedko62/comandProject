@@ -55,7 +55,9 @@ Route::name('user.')->group(function(){
    
    });
    
-
+   Route::get('/alertCreate', function(){
+    return view('ClientPages.CreateAlert');
+});
    Route::prefix('auth')->group(function(){
        Route::get("/google",[AuthorizationController::class,'continueWith'])->name('google');
        Route::get("/google/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('google');

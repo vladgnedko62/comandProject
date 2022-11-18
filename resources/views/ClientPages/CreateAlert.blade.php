@@ -1,45 +1,41 @@
-
 @extends('layout/layout')
 @section('head')
 <link rel="stylesheet" href="./css/login.css" type="text/css">
-<link rel="stylesheet" href="./css/animate.css" type="text/css">
-<title>Login</title>
+<link rel="stylesheet" href="./css/addAlert.css" type="text/css">
+<!-- <link rel="stylesheet" href="./css/animate.css" type="text/css"> -->
+<title>Confirming</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
 @section('content')
 <div class="mainBanner">
-<div class="banner">
+    <div class="banner">
         <div class="navbar animated">
-            <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
+                    <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">                    
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
                 <li><a href="/login">Log in</a></li>       
             </ul> 
         </div>
-        <div class="back animated">
-          <h2>Login in Your Account</h2>
-          <form method="post" action="{{route('user.login')}}">
-          @csrf
-          <p>Login into Google</p>
-          <a id="intoG" href="/auth/google"><i class="fab fa-google"></i></a>
-          <a id="intoG" href="/auth/link"><i class="fab fa-linkedin"></i></a>
-          <a id="intoG" href="/auth/git"><i class="fab fa-github"></i></a>
+        <div class="back">
+        <form style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
+              @csrf
+              <input type="text" required name="alertName" placeholder="Input alert name">
+              <input type="file" required name="alertName" placeholder="Input alert name">
+              <p for="startDate">Input start date</p>
+              <input class="dateI" type="datetime-local" required name="startDate" placeholder="Input Name">
+              <p for="startDate">Input end date</p>
+              <input class="dateI" type="datetime-local" required name="endDate" placeholder="Input Password">
+              <select name="tag">
+                <option value="qwe">qwe</option>
+                <option value="qwe">qwe</option>
+                <option value="qwe">qwe</option>
+              </select>
+              <button class="btn btn-5"><span></span>Sign In</button> 
 
-          <h1><span>or</span></h1>
-
-          <input type="email" name="email" placeholder="Input Email" required>
-          <input type="password" minlength="6" required name="password" placeholder="Input Password">
-          <button class="btn btn-5"><span></span>Sign In</button> 
-          </form>
-          @error('formError')
-            <label style="color: red;"> {{$message}}</label>
-            <br>
-          @enderror
-          <p class="userN">New user? <a id="reg" href="/register">Register</a></p>
+              </form>
         </div>
     </div>
-
     <section id="logFooter" class="footer">
         <div class="social">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -58,6 +54,5 @@
             Future Coders @ 2021
         </p>
     </section>
-    </div>
-    <script src="jsFiles/loginPageAnim.js"></script>
+</div>
 @endsection

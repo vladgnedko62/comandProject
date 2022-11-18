@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height  : 100%;
+    color: white;
+}
+.centerB{
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 7px;  
+    padding: 8px;
+    font-size: 21px;
+    box-shadow: 0px 0px 30px black;
+}
+@media screen and (max-width:627px) {
+    .centerB{
+        width: 80%;
+    }
+   
+}

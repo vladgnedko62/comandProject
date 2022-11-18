@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\EmailVerificationPromptController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

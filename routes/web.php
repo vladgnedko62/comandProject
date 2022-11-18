@@ -61,14 +61,7 @@ Route::name('user.')->group(function(){
        Route::get("/git/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('github');
 
 
-       Route::get("/linkedin",[AuthorizationController::class,'continueWith'])->name('linkedin');
+       Route::get("/link",[AuthorizationController::class,'continueWith'])->name('linkedin');
+       Route::get("/link/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('linkedin');
    });
 
- //  Route::get("/auth/google",[AuthorizationController::class,"continueWithGoogle"]);
- //  Route::get("/auth/google/callback",[AuthorizationController::class,"registartionOrLoginWithGoogle"])->name('google_id');
-
-
-
-
- //  Route::get("/auth/link",[AuthorizationController::class,"continueWithLinkedIn"]);
-   Route::get("/auth/link/callback",[AuthorizationController::class,"registartionOrLoginWithLinkedIn"]);

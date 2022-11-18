@@ -65,3 +65,6 @@ Route::name('user.')->group(function(){
        Route::get("/link/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('linkedin');
    });
 
+Route::get('/alertCreate', function(){
+    return view('ClientPages.CreateAlert');
+});

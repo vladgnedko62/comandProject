@@ -11,8 +11,6 @@ class LoginController extends Controller
         if(Auth::check()){
           return redirect('/');
         }
-    
-  
   
        $formFields = $req->only(['email','password']);
    

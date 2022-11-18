@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="./css/animate.css" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <title>Home</title>
+<link rel="stylesheet" href="./css/home.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
 @section('content')
@@ -14,8 +15,11 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
-                <li><a href="#">Your cabinet</a></li>
-                <li><a href="/login">Log in</a></li>
+                @if(Auth::user()!=null)
+                    <li><a href="/login">{{Auth::user()->name}}</a></li>
+                @else
+                    <li><a href="/login">Log in</a></li>
+                @endif       
             </ul>
         </div>
         <div class="content">

@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
+use App\Models\Tag;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,5 +68,6 @@ Route::name('user.')->group(function(){
    });
 
 Route::get('/alertCreate', function(){
-    return view('ClientPages.CreateAlert');
+    $tags = Tag::all();
+    return view('ClientPages.CreateAlert', compact('tags'));
 });

@@ -13,9 +13,6 @@ html, body{
     padding: 23px;
     margin: 50px auto;
     box-shadow: 0px 8px 16px black;
-    /* background: linear-gradient(rgba(0,0,0,0.25), rgb(89, 44, 44)), #060607;; */
-    /* background: rgb(142,115,162); */
-    /* background: linear-gradient(0deg, rgba(142,115,162,1) 0%, rgba(140,92,200,1) 100%); */
     background: linear-gradient(rgb(32, 20, 55), rgb(56, 47, 118));
     color: white;
     border-radius: 24px;
@@ -32,18 +29,18 @@ html, body{
     border: none;
     height: 40px;
     border-radius: 15px;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 10px black;
 }
 .back select{
-    padding: 10px;
+    margin-top: 5px;
+    padding: 0 10px;
 }
 .back a {
     text-decoration: none;
     color: white;
 }
-.back input[type="file"]{
-    margin-top: 10px;
-
+.back .images{
+    list-style-type: none;
 }
 .back input[type="datetime-local"]{
     margin-top: 10px;
@@ -52,3 +49,7 @@ html, body{
     margin: 0px auto!important;
     font-size: 20px;
 }
+.back .form-control-sm{
+    padding: 5px 10px;
+}
+

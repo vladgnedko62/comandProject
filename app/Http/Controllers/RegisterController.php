@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
+
 
 
 class RegisterController extends Controller
@@ -33,12 +36,15 @@ class RegisterController extends Controller
 
 
         $user = User::create($validateFields);
+    
+        event(new Registered($user));
 
-     
+
         if($user){
          
             Auth::login($user);
-            return redirect()->to(route(name:'user.login'));
+    
+            return redirect('/email/verify');
         }
 
         return redirect()->to(route(name:'user.login'))->withErrors([

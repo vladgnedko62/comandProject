@@ -22,7 +22,7 @@
         </div>
         <div class="back">
             <h2>Create Alert</h2>
-        <form style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
+        <form style="display:flex;flex-direction:column" method="post" action="{{route('user.register')}}" enctype="multipart/form-data">
               @csrf
               <input type="text" required name="alertName" placeholder="Input alert name">
               <p for="startDate">Add images(max-3)</p>
@@ -39,7 +39,7 @@
                     <option value="qwe">{{ $tag->name }}</option>
                 @endforeach
               </select>
-              <button class="btn btn-5"><span></span>Sign In</button> 
+              <button class="btn btn-5"><span></span>Create alert</button> 
 
               </form>
         </div>

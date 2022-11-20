@@ -20,9 +20,9 @@
         <div class="back animated">
           <h2>Registration</h2>
           <p>Registration using sozial networks</p>
-          <a id="intoG" href="#"><i class="fab fa-google"></i></a>
-          <a id="intoG" href="#"><i class="fab fa-linkedin"></i></a>
-          <a id="intoG" href="#"><i class="fab fa-github"></i></a>
+          <a id="intoG" href="/auth/google"><i class="fab fa-google"></i></a>
+          <a id="intoG" href="/auth/link"><i class="fab fa-linkedin"></i></a>
+          <a id="intoG" href="/auth/git"><i class="fab fa-github"></i></a>
           <h1><span>or</span></h1>
           <form style="display:flex;flex-direction:column"  method="post" action="{{route('user.register')}}">
               @csrf

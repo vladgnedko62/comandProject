@@ -8,12 +8,13 @@ use Illuminate\Foundation\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\EmailVerificationPromptController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
+
+
 
 use App\Models\Tag;
-=======
+
 use Illuminate\Http\Request;
->>>>>>> a2b14fbb04d418c3eb4aae46ab415c68b681681a
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,12 +78,12 @@ Route::name('user.')->group(function(){
        Route::get("/link/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('linkedin');
    });
 
-<<<<<<< HEAD
+
 Route::get('/alertCreate', function(){
     $tags = Tag::all();
     return view('ClientPages.CreateAlert', compact('tags'));
 });
-=======
+
 
 
 
@@ -125,4 +126,3 @@ Route::post('/email/verification-notification', function (Request $request) {
  
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
->>>>>>> a2b14fbb04d418c3eb4aae46ab415c68b681681a

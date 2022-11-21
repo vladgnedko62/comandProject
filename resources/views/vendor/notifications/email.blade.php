@@ -28,7 +28,7 @@
             text-align: center;
             border-radius: 7px;
         }
-        a{
+        button{
             text-decoration: none;
             border: 1px solid black;
             border-radius: 7px;
@@ -38,13 +38,13 @@
             color: white;
 
         }
-        a:hover{
+        button:hover{
             background-color: rgb(42, 149, 42);
         }
         h1{
             margin-bottom: 15px;
         }
-        h1,a{
+        h1,button{
             position: relative;
             top: 40%;
         }
@@ -62,7 +62,7 @@
     <div class="block">
         <img src="images/logoMail.png">
         <h1>Verified Your Account</h1>
-        <x-mail::button :url="$actionUrl">
+<x-mail::button :url="$actionUrl">
 {{ $actionText }}
 </x-mail::button>
     </div>

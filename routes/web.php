@@ -65,6 +65,7 @@ Route::name('user.')->group(function(){
    Route::get('/alertCreate', function(){
     return view('ClientPages.CreateAlert');
 });
+
    Route::prefix('auth')->group(function(){
        Route::get("/google",[AuthorizationController::class,'continueWith'])->name('google');
        Route::get("/google/callback",[AuthorizationController::class,"registartionOrLoginWith"])->name('google');
@@ -117,7 +118,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::get('/email/verify', function () {
-    return view('auth.verify-email');
+    return redirect('/verify-email');
 })->middleware('auth')->name('verification.notice');
 
 

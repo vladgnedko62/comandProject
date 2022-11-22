@@ -19,7 +19,7 @@
         </div>
         <div class="back animated">
           <h2>Registration</h2>
-          <p>Registration using sozial networks</p>
+          <p>Registration using social networks</p>
           <a id="intoG" href="/auth/google"><i class="fab fa-google"></i></a>
           <a id="intoG" href="/auth/link"><i class="fab fa-linkedin"></i></a>
           <a id="intoG" href="/auth/git"><i class="fab fa-github"></i></a>

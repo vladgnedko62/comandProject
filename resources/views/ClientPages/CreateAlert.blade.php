@@ -22,7 +22,7 @@
         </div>
         <div class="back">
             <h2>Create Alert</h2>
-        <form style="display:flex;flex-direction:column" method="post" action="{{route('user.register')}}" enctype="multipart/form-data">
+        <form style="display:flex;flex-direction:column" method="post" action="{{route('user.register')}}" enctype="multipart/form-data"x>
               @csrf
               <input type="text" required name="alertName" placeholder="Input alert name">
               <p for="startDate">Add images(max-3)</p>

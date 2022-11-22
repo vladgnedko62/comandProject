@@ -21,7 +21,7 @@
           <h2>Login in Your Account</h2>
           <form method="post" action="{{route('user.login')}}">
           @csrf
-          <p>Login into Google</p>
+          <p>Login using social networks</p>
           <a id="intoG" href="/auth/google"><i class="fab fa-google"></i></a>
           <a id="intoG" href="/auth/link"><i class="fab fa-linkedin"></i></a>
           <a id="intoG" href="/auth/git"><i class="fab fa-github"></i></a>

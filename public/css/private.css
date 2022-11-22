@@ -36,8 +36,10 @@ html, body{
     border: none;
 }
 .userInfo .miniblock{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+    font-family: 'Poppins';font-size: 19px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
 }
 .userInfo .btn {
     grid-column: span 2;
@@ -81,6 +83,9 @@ html, body{
 }
 .tasksBlock h2{
     text-align: center;
+}
+a{
+    text-decoration: none;
 }
 .tasks{
     border-radius: 5px;

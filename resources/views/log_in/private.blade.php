@@ -37,10 +37,13 @@
                     <h2>Performed tasks</h2>
                     <div class="tasks">
                         <div class="flextask">
-                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
-                                <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                <p class="tag">Tag: qwer</p>
+                            <div class="taskDiv">
+                                <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
+                                    <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
+                                </div>
+                                <p class="tag" style="padding:5px; color: black; border:2px solid black;">Tag: qwer</p>
                             </div>
+
                             <!-- <div class="toggle-pill">
                                 <input type="checkbox" id="pill1" name="check">
                                 <label for="pill1"></label>                          
@@ -50,7 +53,7 @@
                                 <div>
                                     <input type="checkbox" id="1" class="_checkbox">
                                     <label for="1">
-                                    <div id="tick_mark1" class="tick_mark"></div>
+                                        <div id="tick_mark1" class="tick_mark"></div>
                                 </div>
                             </div>
 
@@ -64,7 +67,7 @@
                                 <div>
                                     <input type="checkbox" id="2" class="_checkbox">
                                     <label for="2">
-                                    <div id="tick_mark2" class="tick_mark"></div>
+                                        <div id="tick_mark2" class="tick_mark"></div>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +86,7 @@
                                 <div>
                                     <input type="checkbox" id="3" class="_checkbox">
                                     <label for="3">
-                                    <div id="tick_mark3" class="tick_mark"></div>
+                                        <div id="tick_mark3" class="tick_mark"></div>
                                 </div>
                             </div>
                         </div>

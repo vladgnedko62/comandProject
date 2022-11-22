@@ -96,7 +96,7 @@ html, body{
 }
 .task{
     border: 1px solid black;
-    width: 85%;
+    width: 100%;
     border-radius: 5px;
     padding: 7px;
     background-position: center;
@@ -287,4 +287,7 @@ html, body{
   .checkboxDiv{
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .taskDiv{
+    width: 85%;
   }

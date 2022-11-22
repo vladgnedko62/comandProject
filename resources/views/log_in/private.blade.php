@@ -8,21 +8,21 @@
 @endSection
 @section('content')
 <div class="mainBanner">
-<div class="banner">
+    <div class="banner">
         <div class="navbar animated">
             <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
                 @if(Auth::user()!=null)
-                    <li><a href="/login">{{Auth::user()->name}}</a></li>
+                <li><a href="/login">{{Auth::user()->name}}</a></li>
                 @else
-                    <li><a href="/login">Log in</a></li>
-                @endif   
+                <li><a href="/login">Log in</a></li>
+                @endif
             </ul>
         </div>
-   
-        
+
+
         <div class="userInfo" style="margin-bottom:700px">
             <h1>Change details</h1>
             <div class="miniblock">
@@ -37,26 +37,36 @@
                     <h2>Performed tasks</h2>
                     <div class="tasks">
                         <div class="flextask">
-                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">         
+                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
                                 <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                <p class="tag">Tag: qwer</p>                       
+                                <p class="tag">Tag: qwer</p>
                             </div>
                             <!-- <div class="toggle-pill">
                                 <input type="checkbox" id="pill1" name="check">
                                 <label for="pill1"></label>                          
                             </div> -->
-                            <input type="checkbox" id="1" class="_checkbox">
-                            <label for="1">
-                            <div id="tick_mark1" class="tick_mark"></div>
+
+                            <div class="checkboxDiv">
+                                <div>
+                                    <input type="checkbox" id="1" class="_checkbox">
+                                    <label for="1">
+                                    <div id="tick_mark1" class="tick_mark"></div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="flextask">
-                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">         
+                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
                                 <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                <p class="tag">Tag: qwer</p>                       
+                                <p class="tag">Tag: qwer</p>
                             </div>
-                            <input type="checkbox" id="2" class="_checkbox">
-                            <label for="2">
-                            <div id="tick_mark2" class="tick_mark"></div>
+                            <div class="checkboxDiv">
+                                <div>
+                                    <input type="checkbox" id="2" class="_checkbox">
+                                    <label for="2">
+                                    <div id="tick_mark2" class="tick_mark"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -65,13 +75,17 @@
                     <h2>Active tasks</h2>
                     <div class="tasks">
                         <div class="flextask">
-                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">         
+                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
                                 <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                <p class="tag">Tag: qwer</p>                       
+                                <p class="tag">Tag: qwer</p>
                             </div>
-                            <input type="checkbox" id="3" class="_checkbox">
-                            <label for="3">
-                            <div id="tick_mark3" class="tick_mark"></div>
+                            <div class="checkboxDiv">
+                                <div>
+                                    <input type="checkbox" id="3" class="_checkbox">
+                                    <label for="3">
+                                    <div id="tick_mark3" class="tick_mark"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,18 +98,14 @@
 <script>
     let a = document.querySelectorAll('#_checkbox');
     a.forEach(element => {
-            element.addEventListener('click', ()=>{
+        element.addEventListener('click', () => {
             if (element.value == "on") {
                 element.value = "off";
-            }
-            else{
+            } else {
                 element.value = "on";
             }
             console.log(a.value);
         });
     });
-  
-
 </script>
 @endsection
-

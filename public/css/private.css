@@ -96,7 +96,7 @@ html, body{
 }
 .task{
     border: 1px solid black;
-    width: 90%;
+    width: 85%;
     border-radius: 5px;
     padding: 7px;
     background-position: center;
@@ -117,6 +117,7 @@ html, body{
     box-shadow: 0 0 5px rgb(47, 6, 104);
     border-radius: 10px;
     height: 500%;
+    align-items: center;
 }
 
 .toggle-pill{
@@ -221,7 +222,7 @@ html, body{
   }
   
   label:active {
-    transform: translateY(-50%) scale(0.9);
+    transform: translateY(-5%) scale(0.9);
   }
   .tick_mark {
     position: absolute;
@@ -251,7 +252,7 @@ html, body{
     width: 5px;
     height: 15px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
-    transform: translateY(-68px);
+    transform: translateY(-34px);
   }
   
   .tick_mark:after {
@@ -277,4 +278,13 @@ html, body{
   ._checkbox:checked + label .tick_mark:after {
     transform: translate(0);
     opacity: 1;
+  }
+  .checkboxDiv>div{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .checkboxDiv{
+    padding-left: 5%;
+    padding-right: 5%;
   }

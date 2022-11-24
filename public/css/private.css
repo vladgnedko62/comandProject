@@ -8,7 +8,9 @@ html, body{
     height  : 100%;
     color: white;
 }
-
+.mainBanner{
+    height: 130vh;
+}
 .userInfo{
     width: 80%;
     padding: 23px;
@@ -38,8 +40,8 @@ html, body{
 .userInfo .miniblock{
     padding: 40px;
     font-family: 'Poppins';font-size: 19px;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    justify-content: space-between;
 }
 .userInfo .btn {
     grid-column: span 2;
@@ -102,7 +104,8 @@ a{
 .task{
     border: 1px solid black;
     width: 100%;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     padding: 7px;
     background-position: center;
     cursor: pointer;
@@ -229,6 +232,9 @@ a{
   label:active {
     transform: translateY(-5%) scale(0.9);
   }
+  .flextask .tag{
+    margin-right: 20px;
+  }
   .tick_mark {
     position: absolute;
     top: -1px;
@@ -295,4 +301,40 @@ a{
   }
   .taskDiv{
     width: 85%;
+  }
+  .tagdate{
+    font-size: 15px;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    padding:3px; 
+    border:2px solid black;
+    border-top:none;
+    justify-content: space-between;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .date{
+    color: rgb(119, 119, 119);
+  }
+  .innerminibl{
+    display: flex;
+    align-content: center;
+  }
+  .miniblock #img1{
+    display: block;
+    width: 40px;
+    height: 40px;
+  }  
+  .miniblock #img2{
+    display: block;
+    width: 40px;
+  }
+  .miniblock p{
+    display: block;
+    padding: 5px 0 0 3px;
+  }  
+  .miniblock h2{
+    display: block;
+    padding-left: 3px;
   }

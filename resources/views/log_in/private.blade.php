@@ -24,31 +24,35 @@
 
 
         <div class="userInfo" style="margin-bottom:700px">
-            <h1>Change details</h1>
+            <h1>Your details</h1>
             <div class="miniblock">
-                <!-- <input type="text" require placeholder="Input new name" name="name" value="{{Auth::user()->name}}">
-                <input type="email" require placeholder="Input new email" name="name" value="{{Auth::user()->email}}">
-                <button class="btn btn-5" type="submit">Submit changes</button> -->
-                <a href="/logout">logout</a>
+                <div>
+                    <div class="innerminibl">
+                        <img id="img1" src="images/manImg.png"><h2>{{Auth::user()->name}}</h2>
+                    </div>
+                    <div class="innerminibl">
+                        <img id="img2" src="images/mailImg.png"><p>{{Auth::user()->email}}</p>
+                    </div>      
+                </div>
+                <div>
+                    <a class="btn btn-5" href="/logout">logout</a>          
+                </div>
             </div>
-            <!-- <a href="/alertCreate">create</a> -->
+            
             <div class="tasksBlock">
                 <div>
                     <h2>Performed tasks</h2>
                     <div class="tasks">
-                        <div class="flextask">
+                        <div class="flextask">         
                             <div class="taskDiv">
-                                <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
+                                <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
                                     <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
                                 </div>
-                                <p class="tag" style="padding:5px; color: black; border:2px solid black;">Tag: qwer</p>
+                                <div class="tagdate">
+                                    <p class="tag">Tag: qwer</p>
+                                    <p class="date">12.10.2021-20.12.2022</p>
+                                </div>
                             </div>
-
-                            <!-- <div class="toggle-pill">
-                                <input type="checkbox" id="pill1" name="check">
-                                <label for="pill1"></label>                          
-                            </div> -->
-
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="1" class="_checkbox">
@@ -56,12 +60,16 @@
                                         <div id="tick_mark1" class="tick_mark"></div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="flextask">
-                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
-                                <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                <p class="tag">Tag: qwer</p>
+                            <div class="taskDiv">
+                                <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
+                                    <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
+                                </div>
+                                <div class="tagdate">
+                                    <p class="tag">Tag: qwer</p>
+                                    <p class="date">12.10.2021-20.12.2022</p>
+                                </div>
                             </div>
                             <div class="checkboxDiv">
                                 <div>
@@ -77,10 +85,15 @@
                 <div>
                     <h2>Active tasks</h2>
                     <div class="tasks">
-                        <div class="flextask">
-                            <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
-                                <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                <p class="tag">Tag: qwer</p>
+                    <div class="flextask">
+                            <div class="taskDiv">
+                                <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
+                                    <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
+                                </div>
+                                <div class="tagdate">
+                                    <p class="tag">Tag: qwer</p>
+                                    <p class="date">12.10.2021-20.12.2022</p>
+                                </div>
                             </div>
                             <div class="checkboxDiv">
                                 <div>

@@ -85,7 +85,10 @@ Route::get('/alertCreate', function(){
     return view('ClientPages.CreateAlert', compact('tags'));
 });
 
-
+Route::get('/alertDetails', function(){
+    // $tags = Tag::all();
+    return view('ClientPages.AlertDetail');
+});
 
 
    

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AlertController;
 use App\Http\Controllers\VerifyEmailController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Foundation\Auth\EmailVerificationNotificationController;
@@ -31,7 +32,7 @@ Route::get('/',[HomeController::class,"home"]);
 
 
 Route::name('user.')->group(function(){
-    Route::view('/private','log_in/private')->middleware(['auth', 'verified'])->name(name:'private');
+    Route::get('/private',[AlertController::class,"index"])->middleware(['auth', 'verified'])->name(name:'private');
    
    
     Route::get('/login',function(){

@@ -7,9 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
-
 use App\Models\User;
-
+use DateTime;
 class AuthorizationController extends Controller
 {
 
@@ -55,16 +54,21 @@ class AuthorizationController extends Controller
 
         }
         else{
+            $st = new DateTime();
             $createUser = User::create([
                 'name' => $user_name,
                 'email' => $user->email,
-                $id_name => $user->id,
+                'email_verified_at' => $st,
+                 $id_name => $user->id,
                 'password' => encrypt('user')
             ]);
 
+             Auth::login($createUser);
 
-            Auth::login($createUser);
+       
 
+          
+          
                  return redirect('/');
         }
         return redirect('/');

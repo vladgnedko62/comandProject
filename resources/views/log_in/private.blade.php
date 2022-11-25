@@ -26,7 +26,7 @@
         <div class="userInfo" style="margin-bottom:700px">
             <h1>Your details</h1>
             <div class="miniblock">
-                <div>
+                <div class="mb">
                     <div class="innerminibl">
                         <img id="img1" src="images/manImg.png"><h2>{{Auth::user()->name}}</h2>
                     </div>
@@ -42,7 +42,7 @@
             <div class="tasksBlock">
                 <div>
                     <h2>Performed tasks</h2>
-                    <div class="tasks">
+                    <div class="tasks ready">
                         <div class="flextask">         
                             <div class="taskDiv">
                                 <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
@@ -56,7 +56,7 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="1" class="_checkbox">
-                                    <label for="1">
+                                    <label class="checked" for="1">
                                         <div id="tick_mark1" class="tick_mark"></div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
     </div>
 </div>
 <script>
-    let a = document.querySelectorAll('#_checkbox');
+    let a = document.querySelectorAll('._checkbox');
     a.forEach(element => {
         element.addEventListener('click', () => {
             if (element.value == "on") {
@@ -120,7 +120,13 @@
             } else {
                 element.value = "on";
             }
-            console.log(a.value);
+        });
+    });
+
+    let b = document.querySelectorAll('.ready ._checkbox');
+    b.forEach(element => {
+        element.addEventListener('click', () => {
+            // element.setAttribute("checked", "");
         });
     });
 </script>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AlertController;
 use App\Http\Controllers\VerifyEmailController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Foundation\Auth\EmailVerificationNotificationController;
@@ -29,9 +30,19 @@ use Illuminate\Http\Request;
 Route::get('/',[HomeController::class,"home"]);
 
 
+Route::name('alerts.')->group(function(){
+    Route::get('/create',[AlertController::class,"create"])->middleware(['auth', 'verified'])->name(name:'create');
+
+    Route::post('/store',[AlertController::class,"store"])->middleware(['auth', 'verified'])->name(name:'store');
+
+    Route::post('/show',[AlertController::class,"show"])->middleware(['auth', 'verified'])->name(name:'show');
+
+
+});
+
 
 Route::name('user.')->group(function(){
-    Route::view('/private','log_in/private')->middleware(['auth', 'verified'])->name(name:'private');
+    Route::get('/private',[AlertController::class,"index"])->middleware(['auth', 'verified'])->name(name:'private');
    
    
     Route::get('/login',function(){
@@ -82,14 +93,16 @@ Route::name('user.')->group(function(){
 
 Route::get('/alertCreate', function(){
     $tags = Tag::all();
-    return view('ClientPages.CreateAlert', compact('tags'));
+    return view('alerts.create', compact('tags'));
 });
 
 Route::get('/alertDetails', function(){
-    // $tags = Tag::all();
     return view('ClientPages.AlertDetail');
 });
-
+Route::get('/alertEdit', function(){
+    $tags = Tag::all();
+    return view('alerts.edit');
+});
 
    
 

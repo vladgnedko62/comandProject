@@ -26,7 +26,7 @@
         <div class="userInfo" style="margin-bottom:700px">
             <h1>Your details</h1>
             <div class="miniblock">
-                <div>
+                <div class="mb">
                     <div class="innerminibl">
                         <img id="img1" src="images/manImg.png"><h2>{{Auth::user()->name}}</h2>
                     </div>
@@ -35,6 +35,7 @@
                     </div>      
                 </div>
                 <div>
+                     <a class="btn btn-5" href="{{route('alerts.create')}}">Add new Alert</a>
                     <a class="btn btn-5" href="/logout">logout</a>          
                 </div>
             </div>
@@ -42,7 +43,7 @@
             <div class="tasksBlock">
                 <div>
                     <h2>Performed tasks</h2>
-                    <div class="tasks">
+                    <div class="tasks ready">
                         <div class="flextask">         
                             <div class="taskDiv">
                                 <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
@@ -56,8 +57,8 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="1" class="_checkbox">
-                                    <label for="1">
-                                        <div id="tick_mark1" class="tick_mark"></div>
+                                    <label class="checked" for="1">
+                                        <div id="tick_mark1" class="tick_mark ch"></div>
                                 </div>
                             </div>
                         </div>
@@ -106,13 +107,29 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
+    <section id="logFooter" class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">
+            Future Coders @ 2021
+        </p>
+    </section>
 </div>
 <script>
-    let a = document.querySelectorAll('#_checkbox');
+    let a = document.querySelectorAll('._checkbox');
     a.forEach(element => {
         element.addEventListener('click', () => {
             if (element.value == "on") {
@@ -120,7 +137,13 @@
             } else {
                 element.value = "on";
             }
-            console.log(a.value);
+        });
+    });
+
+    let b = document.querySelectorAll('.ready ._checkbox');
+    b.forEach(element => {
+        element.addEventListener('click', () => {
+            // element.setAttribute("checked", "");
         });
     });
 </script>

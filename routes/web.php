@@ -87,14 +87,16 @@ Route::name('user.')->group(function(){
 
 Route::get('/alertCreate', function(){
     $tags = Tag::all();
-    return view('ClientPages.CreateAlert', compact('tags'));
+    return view('alerts.create', compact('tags'));
 });
 
 Route::get('/alertDetails', function(){
-    // $tags = Tag::all();
     return view('ClientPages.AlertDetail');
 });
-
+Route::get('/alertEdit', function(){
+    $tags = Tag::all();
+    return view('alerts.edit');
+});
 
    
 

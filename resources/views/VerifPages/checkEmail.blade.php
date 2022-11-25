@@ -15,6 +15,7 @@
         <div class="centerB">
             <strong>Thanks for signing up!<br> Before getting started, verify your email address by clicking on the link we just emailed to you.</strong>
         </div>
+        <a class="btn btn-5" href="/logout">logout</a>  
     </div>
     <section id="logFooter" class="footer">
         <div class="social">

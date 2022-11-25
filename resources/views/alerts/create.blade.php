@@ -24,7 +24,7 @@
             <h2>Create Alert</h2>
         <form style="display:flex;flex-direction:column" method="post" action="{{route('alerts.store')}}" enctype="multipart/form-data"x>
               @csrf
-              <input type="text" required name="alertName" placeholder="Input alert name">
+              <input maxlength="16" type="text" required name="alertName" placeholder="Input alert name">
               <p for="startDate">Add images(max-3)</p>
               <div class="images">
                 <li><input class="form-control form-control-sm" type="file" required name="image1"></li>

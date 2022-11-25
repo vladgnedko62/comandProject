@@ -23,7 +23,7 @@
         </div>
 
 
-        <div class="userInfo" style="margin-bottom:700px">
+        <div class="userInfo">
             <h1>Your details</h1>
             <div class="miniblock">
                 <div class="mb">

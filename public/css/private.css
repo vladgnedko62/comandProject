@@ -8,8 +8,9 @@ html, body{
     height  : 100%;
     color: white;
 }
-.mainBanner{
-    height: 130vh;
+.banner{
+  min-height: 100hv;
+  height: auto;
 }
 .userInfo{
     width: 80%;

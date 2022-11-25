@@ -44,67 +44,72 @@
                 <div>
                     <h2>Performed tasks</h2>
                     <div class="tasks ready">
+                        @foreach($data["compalerts"] as $alert)
                         <div class="flextask">         
                             <div class="taskDiv">
-                                <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
-                                    <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
+                            @foreach($data["images"] as $image)
+                                 @if($image->alert_id==$alert->id)
+                                <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
+                                @endif
+                                @endforeach   
+                                    <p class="alertInfo">{{$alert->alert}}</p>
                                 </div>
                                 <div class="tagdate">
-                                    <p class="tag">Tag: qwer</p>
-                                    <p class="date">12.10.2021-20.12.2022</p>
+                                    @foreach($data["tags"] as $tag)
+                                    @if($tag->id == $alert->tag_id)
+                                    <p class="tag">{{$tag->name}}</p>
+                                    @endif
+                                    @endforeach
+                                    <p class="date">{{$alert->start_date}}/{{$alert->end_date}}</p>
                                 </div>
                             </div>
                             <div class="checkboxDiv">
                                 <div>
-                                    <input type="checkbox" id="1" class="_checkbox">
-                                    <label class="checked" for="1">
+                                    <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
+                                    <label class="checked" for="{{$alert->id}}">
                                         <div id="tick_mark1" class="tick_mark ch"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flextask">
-                            <div class="taskDiv">
-                                <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
-                                    <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
-                                </div>
-                                <div class="tagdate">
-                                    <p class="tag">Tag: qwer</p>
-                                    <p class="date">12.10.2021-20.12.2022</p>
-                                </div>
-                            </div>
-                            <div class="checkboxDiv">
-                                <div>
-                                    <input type="checkbox" id="2" class="_checkbox">
-                                    <label for="2">
-                                        <div id="tick_mark2" class="tick_mark"></div>
-                                </div>
-                            </div>
-                        </div>
+                       @endforeach
                     </div>
                 </div>
 
                 <div>
                     <h2>Active tasks</h2>
                     <div class="tasks">
+                    @foreach($data["alerts"] as $alert)
                     <div class="flextask">
                             <div class="taskDiv">
-                                <div style="background-image: url('{{asset('images/photo1.jpg')}}')" class="task">
-                                    <p class="alertInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil neque ipsam fugiat animi unde?</p>
+                            @foreach($data["images"] as $image)
+                                 @if($image->alert_id==$alert->id)
+                                <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
+                                @endif
+                                @endforeach   
+
+                                    <p class="alertInfo">{{$alert->alert}}</p>
                                 </div>
                                 <div class="tagdate">
-                                    <p class="tag">Tag: qwer</p>
-                                    <p class="date">12.10.2021-20.12.2022</p>
+                                @foreach($data["tags"] as $tag)
+                                    @if($tag->id == $alert->tag_id)
+                                    <p class="tag">{{$tag->name}}</p>
+                                    @endif
+                                    @endforeach
+                                    <p class="date">{{$alert->end_date}}</p>
                                 </div>
                             </div>
                             <div class="checkboxDiv">
                                 <div>
-                                    <input type="checkbox" id="3" class="_checkbox">
-                                    <label for="3">
+                                    <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
+                                    <label for="{{$alert->id}}">
                                         <div id="tick_mark3" class="tick_mark"></div>
                                 </div>
                             </div>
                         </div>
+                          @endforeach 
                     </div>
+                 
+
                 </div>
             </div>
         </div>

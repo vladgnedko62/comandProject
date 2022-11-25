@@ -13,8 +13,12 @@ use DateTime;
 class AlertController extends Controller
 {
     public function index(){
-        $alerts = Alerts::all()->where('user_id',Auth::user()->id);
-        return view('alerts.index',compact('alerts'));
+        $data["alerts"] = Alerts::all()->where('user_id',Auth::user()->id)->where('complete',0);
+        $data["compalerts"] = Alerts::all()->where('user_id',Auth::user()->id)->where('complete',1);
+        $data["images"] = Images::all()->unique('alert_id');
+        $data["tags"] = Tag::all();
+
+        return view('alerts.index',compact('data'));
         
     }
 
@@ -56,19 +60,6 @@ class AlertController extends Controller
     }
      }
 
-    //     $image =  new Images();
-
-    //     $name = $req->file('image1')->getClientOriginalName();
-     
-    //   $req->file('image1')->storeAs('public/images/',$name);
-
-    //   $image->image = $name;
-    //   $image->alert_id = $alert->id; 
-    //   $image->created_at = new DateTime();
-    
-    
-    //     
-    
 
  
         

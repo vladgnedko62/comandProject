@@ -22,7 +22,7 @@
         </div>
         <div class="back">
             <h2>Create Alert</h2>
-        <form style="display:flex;flex-direction:column" method="post" action="{{route('user.register')}}" enctype="multipart/form-data"x>
+        <form style="display:flex;flex-direction:column" method="post" action="{{route('alerts.store')}}" enctype="multipart/form-data"x>
               @csrf
               <input maxlength="16" type="text" required name="alertName" placeholder="Input alert name">
               <p for="startDate">Add images(max-3)</p>
@@ -36,7 +36,7 @@
               <p for="tag">Select tag</p>
               <select name="tag">
                 @foreach($tags as $tag)
-                    <option value="qwe">{{ $tag->name }}</option>
+                    <option value="{{$tag->id}}">{{ $tag->name }}</option>
                 @endforeach
               </select>
               <button class="btn btn-5"><span></span>Create alert</button> 
@@ -77,7 +77,7 @@
                 if (i < 3) {
                     let new_node = document.createElement("div");
                     new_node.className="images";
-                    new_node.innerHTML = '<li><input class="form-control form-control-sm" type="file" required name="image'+(i+1)+'"></li>';
+                    new_node.innerHTML = '<li><input class="form-control form-control-sm" type="file"  name="image'+(i+1)+'"></li>';
                     ul[ul.length-1].parentNode.insertBefore(new_node, ul[ul.length-1].nextSibling);
                     initLi();
                 }

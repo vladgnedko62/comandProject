@@ -32,6 +32,12 @@ Route::get('/',[HomeController::class,"home"]);
 
 Route::name('alerts.')->group(function(){
     Route::get('/create',[AlertController::class,"create"])->middleware(['auth', 'verified'])->name(name:'create');
+
+    Route::post('/store',[AlertController::class,"store"])->middleware(['auth', 'verified'])->name(name:'store');
+
+    Route::post('/show',[AlertController::class,"show"])->middleware(['auth', 'verified'])->name(name:'show');
+
+
 });
 
 

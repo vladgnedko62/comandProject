@@ -35,6 +35,7 @@
                     </div>      
                 </div>
                 <div>
+                     <a href="{{route('alerts.create')}}">Add New Movie</a>
                     <a class="btn btn-5" href="/logout">logout</a>          
                 </div>
             </div>

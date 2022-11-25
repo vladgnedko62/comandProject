@@ -10,7 +10,7 @@ class AlertController extends Controller
 {
     public function index(){
         $alerts = Alerts::all()->where('user_id',Auth::user()->id);
-        return view('log_in.private',compact('alerts'));
+        return view('alerts.index',compact('alerts'));
         
     }
 

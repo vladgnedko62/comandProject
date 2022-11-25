@@ -30,6 +30,10 @@ use Illuminate\Http\Request;
 Route::get('/',[HomeController::class,"home"]);
 
 
+Route::name('alerts.')->group(function(){
+    Route::get('/create',[AlertController::class,"create"])->middleware(['auth', 'verified'])->name(name:'create');
+});
+
 
 Route::name('user.')->group(function(){
     Route::get('/private',[AlertController::class,"index"])->middleware(['auth', 'verified'])->name(name:'private');

@@ -45,12 +45,30 @@
                 <p>12.10.2021 - 20.12.2022</p>
                 
                 <div>
-                    <a href="#" class="btnm"><span></span>Edit</a>
+                    <a href="/alertEdit" class="btnm"><span></span>Edit</a>
                     <a href="#" class="btnm"><span></span>Delete</a>
                 </div>          
             </div>
         </div>   
     </div>
+    <section id="logFooter" class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">
+            Future Coders @ 2021
+        </p>
+    </section>
 </div>
 
 @endsection

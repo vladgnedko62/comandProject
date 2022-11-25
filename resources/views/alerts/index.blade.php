@@ -35,7 +35,7 @@
                     </div>      
                 </div>
                 <div>
-                     <a href="{{route('alerts.create')}}">Add New Movie</a>
+                     <a class="btn btn-5" href="{{route('alerts.create')}}">Add new Alert</a>
                     <a class="btn btn-5" href="/logout">logout</a>          
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                 <div>
                                     <input type="checkbox" id="1" class="_checkbox">
                                     <label class="checked" for="1">
-                                        <div id="tick_mark1" class="tick_mark"></div>
+                                        <div id="tick_mark1" class="tick_mark ch"></div>
                                 </div>
                             </div>
                         </div>
@@ -107,10 +107,26 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
+    <section id="logFooter" class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">
+            Future Coders @ 2021
+        </p>
+    </section>
 </div>
 <script>
     let a = document.querySelectorAll('._checkbox');

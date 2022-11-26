@@ -33,21 +33,22 @@ Route::get('/',[HomeController::class,"home"]);
 Route::name('alerts.')->group(function(){
     Route::get('/create',[AlertController::class,"create"])->middleware(['auth', 'verified'])->name(name:'create');
 
-    Route::post('/store',[AlertController::class,"store"])->middleware(['auth', 'verified'])->name(name:'store');
+     Route::post('/store',[AlertController::class,"store"])->middleware(['auth', 'verified'])->name(name:'store');
 
-    Route::post('/show',[AlertController::class,"show"])->middleware(['auth', 'verified'])->name(name:'show');
+     Route::get('/index/{id}',[AlertController::class,"show"])->middleware(['auth', 'verified'])->name(name:'show');
 
+     Route::get('/index',[AlertController::class,"index"])->middleware(['auth', 'verified'])->name(name:'index');
+  
+     Route::post('/destroy/{id}',[AlertController::class,"destroy"])->middleware(['auth', 'verified'])->name(name:'destroy');
 
 });
 
 
 Route::name('user.')->group(function(){
-    Route::get('/private',[AlertController::class,"index"])->middleware(['auth', 'verified'])->name(name:'private');
-   
-   
+  
     Route::get('/login',function(){
        if(Auth::check()){
-           return redirect(route(name:'user.private'));
+           return redirect(route(name:'alerts.index'));
        }
        return view(view:'log_in/login');
     })->name(name:'login');
@@ -64,7 +65,7 @@ Route::name('user.')->group(function(){
     
     Route::get('/register',function(){
        if(Auth::check()){
-           return redirect(route(name:'user.private'));
+           return redirect(route(name:'alerts.index'));
        }
        return view(view:'log_in/register');
     })->name(name:'register');
@@ -73,9 +74,7 @@ Route::name('user.')->group(function(){
    
    });
    
-   Route::get('/alertCreate', function(){
-    return view('ClientPages.CreateAlert');
-});
+
 
    Route::prefix('auth')->group(function(){
        Route::get("/google",[AuthorizationController::class,'continueWith'])->name('google');
@@ -91,10 +90,6 @@ Route::name('user.')->group(function(){
    });
 
 
-Route::get('/alertCreate', function(){
-    $tags = Tag::all();
-    return view('alerts.create', compact('tags'));
-});
 
 Route::get('/alertDetails', function(){
     return view('ClientPages.AlertDetail');

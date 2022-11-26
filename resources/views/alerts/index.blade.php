@@ -49,7 +49,7 @@
                             <div class="taskDiv">
                             @foreach($data["images"] as $image)
                                  @if($image->alert_id==$alert->id)
-                                <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
+                                <div onclick="window.location='/index/{{$alert->id}}'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
                                 @endif
                                 @endforeach   
                                     <p class="alertInfo">{{$alert->alert}}</p>
@@ -83,7 +83,7 @@
                             <div class="taskDiv">
                             @foreach($data["images"] as $image)
                                  @if($image->alert_id==$alert->id)
-                                <div onclick="window.location='/alertDetails'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
+                                <div onclick="window.location='/index/{{$alert->id}}'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
                                 @endif
                                 @endforeach   
 

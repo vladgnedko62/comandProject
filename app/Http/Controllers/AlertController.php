@@ -67,5 +67,26 @@ class AlertController extends Controller
    }
 
 
+   public function show($id){
+     $data['alert'] = Alerts::find($id);
+     $data['images'] = Images::all()->where("alert_id",$id);
+     $data['isActive'] = false;
+     return view('alerts.show',compact('data'));
+}
+
+public function destroy($id){
+  $alert = Alerts::find($id);
+  $images = Images::all()->where("alert_id",$id);
+
+  $alert->delete();
+  foreach($images as $st){
+    $st->delete();
+  }
+
+  return redirect(route('alerts.index'));
+
+}
+
+
 
 }

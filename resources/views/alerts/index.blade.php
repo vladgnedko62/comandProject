@@ -44,6 +44,9 @@
                 <div>
                     <h2>Performed tasks</h2>
                     <div class="tasks ready">
+                        @if(count($data["compalerts"]) == 0)
+                            <h2 style="color: black">No tasks</h2>
+                        @endif
                         @foreach($data["compalerts"] as $alert)
                         <div class="flextask">         
                             <div class="taskDiv">
@@ -56,7 +59,7 @@
                                 </div>
                                 <div class="tagdate">
                                     @foreach($data["tags"] as $tag)
-                                    @if($tag->id == $alert->tag_id)
+                                     @if($tag->id == $alert->tag_id)
                                     <p class="tag">{{$tag->name}}</p>
                                     @endif
                                     @endforeach
@@ -78,6 +81,9 @@
                 <div>
                     <h2>Active tasks</h2>
                     <div class="tasks">
+                    @if(count($data["alerts"]) == 0)
+                            <h2 style="color: black">No tasks</h2>
+                        @endif
                     @foreach($data["alerts"] as $alert)
                     <div class="flextask">
                             <div class="taskDiv">

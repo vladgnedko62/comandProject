@@ -25,7 +25,7 @@
         <form style="display:flex;flex-direction:column" method="post" action="{{route('user.register')}}" enctype="multipart/form-data"x>
               @csrf
               <input type="text" required name="alertName" placeholder="Input alert name">
-              <p for="startDate">Edit images(max-3)</p>
+              <p for="startDate">Edit images (you can skip it)</p>
               <div class="images">
                 <li><input class="form-control form-control-sm" type="file" name="image1"></li>
               </div>
@@ -62,6 +62,17 @@
     </section>
 </div>
 <script>
+    const inputDate = document.querySelectorAll('input[type="datetime-local"]');
+    var date = new Date();
+    let minDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() ;
+    inputDate[0].min = minDate;
+    inputDate[1].disabled = true;
+
+    inputDate[0].addEventListener('change',()=>{
+        inputDate[1].disabled = false;
+        inputDate[1].min = inputDate[0].value;
+    });
+
     initLi();
     function initLi() {
         let li = document.querySelectorAll('.back .images li');

@@ -67,10 +67,13 @@
     const inputDate = document.querySelectorAll('input[type="datetime-local"]');
     var date = new Date();
     let minDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() ;
-    inputDate.forEach(el => {
-        el.min = minDate;
+    inputDate[0].min = minDate;
+    inputDate[1].disabled = true;
+
+    inputDate[0].addEventListener('change',()=>{
+        inputDate[1].disabled = false;
+        inputDate[1].min = inputDate[0].value;
     });
-    
     
     
     initLi();

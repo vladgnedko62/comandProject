@@ -63,13 +63,14 @@ class AlertController extends Controller
 
  
         
-    return redirect("/private");
+     return redirect(route("alerts.index"));
    }
 
 
    public function show($id){
      $data['alert'] = Alerts::find($id);
      $data['images'] = Images::all()->where("alert_id",$id);
+     $data['alert_tag'] = Tag::find($data['alert']->tag_id);
      $data['isActive'] = false;
      return view('alerts.show',compact('data'));
 }
@@ -87,6 +88,52 @@ public function destroy($id){
 
 }
 
+public function edit($id){
+  $data['alert'] = Alerts::find($id);
+  $data['tags'] = Tag::all();
+
+
+  return view('alerts.edit',compact('data'));
+
+}
+
+
+public function update(Request $req,$id){
+    $alert = Alerts::find($id);
+
+     $alert->alert = $req->get("alertName");
+     $alert->tag_id = $req->get("tag");
+     $alert->user_id = Auth::user()->id;
+     $alert->start_date =  $req->get("startDate");
+     $alert->end_date =  $req->get("endDate");
+     $alert->complete = false;
+     $alert->created_at = new DateTime();
+
+     $alert->save();
+
+
+     for($i=1;$i<=3;$i++){
+        $image =  new Images();
+
+        if($req->file('image'. $i) !=null){
+        $name = $req->file('image'. $i )->getClientOriginalName();
+     
+      $req->file('image' . $i)->storeAs('public/images/',$name);
+
+      $image->image = $name;
+      $image->alert_id = $alert->id; 
+      $image->created_at = new DateTime();
+    
+     
+      $image->save();
+    }
+     }
+
+
+ 
+        
+    return redirect(route("alerts.index"));
+}
 
 
 }

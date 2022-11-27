@@ -52,12 +52,12 @@
                 </a>
             </div>
             <div class="infoblock">
-                <h1>Alert name</h1>
-                <p>Tag: qwe</p>
-                <p>12.10.2021 - 20.12.2022</p>
-                
+                <h1>{{$data['alert']->alert}}</h1>
+                <p>Tag: {{$data['alert_tag']->name}}</p>
+                <p>{{$data['alert']->start_date}} / {{$data['alert']->end_date}}</p>
+        
                 <div>
-                    <a href="/alertEdit" class="btnm"><span></span>Edit</a>
+                    <a href="{{ route('alerts.edit', $data['alert']->id)}}" class="btnm"><span></span>Edit</a>
                     <form action="{{ route('alerts.destroy', $data['alert']->id)}}" method="post">
 
 @csrf

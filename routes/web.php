@@ -41,6 +41,11 @@ Route::name('alerts.')->group(function(){
   
      Route::post('/destroy/{id}',[AlertController::class,"destroy"])->middleware(['auth', 'verified'])->name(name:'destroy');
 
+     Route::get('/index/{id}/edit',[AlertController::class,"edit"])->middleware(['auth', 'verified'])->name(name:'edit');
+
+     Route::post('/index/{id}/update',[AlertController::class,"update"])->middleware(['auth', 'verified'])->name(name:'update');
+
+
 });
 
 

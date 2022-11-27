@@ -1,7 +1,7 @@
 @extends('layout/layout')
 @section('head')
-<link rel="stylesheet" href="./css/login.css" type="text/css">
-<link rel="stylesheet" href="./css/addAlert.css" type="text/css">
+<link rel="stylesheet" href="/css/login.css" type="text/css">
+<link rel="stylesheet" href="/css/addAlert.css" type="text/css">
 <!-- <link rel="stylesheet" href="./css/animate.css" type="text/css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -22,27 +22,34 @@
         </div>
         <div class="back">
             <h2>Create Alert</h2>
-        <form style="display:flex;flex-direction:column" method="post" action="{{route('user.register')}}" enctype="multipart/form-data"x>
+        <form style="display:flex;flex-direction:column" method="post" action="{{route('alerts.update',$data['alert']->id)}}" enctype="multipart/form-data"x>
               @csrf
-              <input type="text" required name="alertName" placeholder="Input alert name">
+              <input type="text" required name="alertName" value="{{$data['alert']->alert}}" placeholder="Input alert name">
               <p for="startDate">Edit images(max-3)</p>
               <div class="images">
                 <li><input class="form-control form-control-sm" type="file" required name="image1"></li>
               </div>
               <p for="startDate">Start date</p>
-              <input class="dateI" type="datetime-local" required name="startDate" placeholder="Input Name">
+              <input class="dateI" type="datetime-local" value="{{$data['alert']->start_date}}" required name="startDate" >
               <p for="startDate">End date</p>
-              <input class="dateI" type="datetime-local" required name="endDate" placeholder="Input Password">
+              <input class="dateI" type="datetime-local" value="{{$data['alert']->end_date}}" required name="endDate" >
               <p for="tag">Select tag</p>
-              <select name="tag">
-           
+              <select name="tag" selected="{{$data['alert']->tag_id}}">
+              @foreach($data['tags'] as $tag)
+              
+                    @if($tag->id == $data['alert']->tag_id)
+                    <option selected="selected" value="{{$tag->id}}">{{ $tag->name }}</option>
+              
+                    @else  <option value="{{$tag->id}}">{{ $tag->name }}</option>
+                    @endif
+                @endforeach
               </select>
               <button class="btn btn-5"><span></span>Edit alert</button> 
 
               </form>
         </div>
     </div>
-    <section id="logFooter" class="footer">
+    <section id="logFooter" class="footer" >
         <div class="social">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-snapchat"></i></a>
@@ -75,7 +82,7 @@
                 if (i < 3) {
                     let new_node = document.createElement("div");
                     new_node.className="images";
-                    new_node.innerHTML = '<li><input class="form-control form-control-sm" type="file" required name="image'+(i+1)+'"></li>';
+                    new_node.innerHTML = '<li><input class="form-control form-control-sm" type="file"  name="image'+(i+1)+'"></li>';
                     ul[ul.length-1].parentNode.insertBefore(new_node, ul[ul.length-1].nextSibling);
                     initLi();
                 }

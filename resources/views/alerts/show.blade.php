@@ -64,7 +64,7 @@
 
 @method('post')
 
-<button  type="submit">Delete</button>
+<button class="btnm" type="submit">Delete</button>
 </form>
                 </div>          
             </div>

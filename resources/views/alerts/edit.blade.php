@@ -27,7 +27,7 @@
               <input type="text" required name="alertName" placeholder="Input alert name">
               <p for="startDate">Edit images(max-3)</p>
               <div class="images">
-                <li><input class="form-control form-control-sm" type="file" required name="image1"></li>
+                <li><input class="form-control form-control-sm" type="file" name="image1"></li>
               </div>
               <p for="startDate">Start date</p>
               <input class="dateI" type="datetime-local" required name="startDate" placeholder="Input Name">

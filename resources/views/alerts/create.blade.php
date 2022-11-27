@@ -64,12 +64,20 @@
     </section>
 </div>
 <script>
+    const inputDate = document.querySelectorAll('input[type="datetime-local"]');
+    var date = new Date();
+    let minDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() ;
+    inputDate.forEach(el => {
+        el.min = minDate;
+    });
+    
+    
+    
     initLi();
     function initLi() {
         let li = document.querySelectorAll('.back .images li');
         let ul = document.querySelectorAll('.back .images');
         let i = 0;
-        console.log(li);  
         li.forEach(el => {
             i++;
             el.addEventListener('change', ()=>{   

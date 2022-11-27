@@ -13,7 +13,7 @@
 <div class="mainBanner">
     <div class="banner">
         <div class="navbar animated">
-                    <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">                    
+                    <img src="/images/logoMain.png" class="logo" onclick="javascript:location.href='/'">                    
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Notifications</a></li>
@@ -27,7 +27,7 @@
               <input type="text" required name="alertName" value="{{$data['alert']->alert}}" placeholder="Input alert name">
               <p for="startDate">Edit images(max-3)</p>
               <div class="images">
-                <li><input class="form-control form-control-sm" type="file" required name="image1"></li>
+                <li><input class="form-control form-control-sm" type="file"  name="image1"></li>
               </div>
               <p for="startDate">Start date</p>
               <input class="dateI" type="datetime-local" value="{{$data['alert']->start_date}}" required name="startDate" >

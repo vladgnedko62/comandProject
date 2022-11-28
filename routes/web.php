@@ -16,21 +16,13 @@ use App\Models\Tag;
 
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/',[HomeController::class,"home"]);
 
 
 Route::name('alerts.')->group(function(){
+
+   
     Route::get('/create',[AlertController::class,"create"])->middleware(['auth', 'verified'])->name(name:'create');
 
      Route::post('/store',[AlertController::class,"store"])->middleware(['auth', 'verified'])->name(name:'store');
@@ -44,8 +36,8 @@ Route::name('alerts.')->group(function(){
      Route::get('/index/{id}/edit',[AlertController::class,"edit"])->middleware(['auth', 'verified'])->name(name:'edit');
 
      Route::post('/index/{id}/update',[AlertController::class,"update"])->middleware(['auth', 'verified'])->name(name:'update');
-
-
+     
+    
 });
 
 
@@ -95,16 +87,6 @@ Route::name('user.')->group(function(){
    });
 
 
-
-Route::get('/alertDetails', function(){
-    return view('ClientPages.AlertDetail');
-});
-Route::get('/alertEdit', function(){
-    $tags = Tag::all();
-    return view('alerts.edit');
-});
-
-   
 
    Route::get('/email/verify', function () {
     return view('auth.verify-email');

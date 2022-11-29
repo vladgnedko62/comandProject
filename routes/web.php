@@ -37,7 +37,7 @@ Route::name('alerts.')->group(function(){
 
      Route::post('/index/{id}/update',[AlertController::class,"update"])->middleware(['auth', 'verified'])->name(name:'update');
      
-     Route::get('/completeAlert/{id}',[AlertController::class,"completeAlert"])->middleware(['auth', 'verified'])->name(name:'completeAlert');
+     Route::post('/completeAlert/{id}',[AlertController::class,"completeAlert"])->middleware(['auth', 'verified'])->name(name:'completeAlert');
 
 });
 

@@ -160,20 +160,24 @@
     //     });
     // });
 
-    let lab1 = document.querySelectorAll('.ready label');
-    lab1.forEach(element => {
-        element.addEventListener('click',  Change(element.dataset.id));
-    });
     async function Change(id){
         console.log(id);
-        const response = await fetch("/index/"+ id +"/update", {
+        const response = await fetch("/completeAlert/"+ id, {
                 method: "POST",
                 headers: { "Accept": "application/json" }
         });
     }
+    let lab1 = document.querySelectorAll('.ready label');
+    lab1.forEach(element => {
+        element.addEventListener('click', ()=>{
+            Change(element.dataset.id);
+        } );
+    });
     let lab2 = document.querySelectorAll('.fut label');
     lab2.forEach(element => {
-        element.addEventListener('click',  Change(element.dataset.id));
+        element.addEventListener('click', ()=>{
+            Change(element.dataset.id);
+        } );
     });
 </script>
 @endsection

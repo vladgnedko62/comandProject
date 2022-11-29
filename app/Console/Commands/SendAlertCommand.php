@@ -29,11 +29,11 @@ class SendAlertCommand extends Command
      */
     public function handle()
     {
-        $alerts = Alerts::with('user')->where('end_date','<=',now()->toDateTimeString())->where('complete',false)->get();
+        $alerts = Alerts::with('user')->where('end_date','<=',now()->toDateTimeString())->where('isMail',false)->get();
 
         foreach($alerts as $alert){
                $alert->user->notify(new AlertNotif($alert));
-                $alert->complete = true;
+                $alert->isMail = true;
                 $alert->save();
               // $alert->update(['reminder_at'=>NULL]);
         }

@@ -2,7 +2,7 @@
 @section('head')
 <link rel="stylesheet" href="./css/login.css" type="text/css">
 <link rel="stylesheet" href="./css/addAlert.css" type="text/css">
-<!-- <link rel="stylesheet" href="./css/animate.css" type="text/css"> -->
+<link rel="stylesheet" href="./css/animate.css" type="text/css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
@@ -12,7 +12,7 @@
 @section('content')
 <div class="mainBanner">
     <div class="banner">
-        <div class="navbar animated">
+        <div class="navbar animated fadeInDown" >
                     <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">                    
             <ul>
                 <li><a href="#">Home</a></li>

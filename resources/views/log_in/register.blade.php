@@ -39,7 +39,7 @@
                 <label> {{$message}}</label>
               @enderror
               <input type="password" minlength="6" maxlength="15" required name="password_check" placeholder="Repeat Password">
-              <button class="btn btn-5"><span></span>Sign In</button> 
+              <button class="btn btn-5"><span></span>Register</button> 
 
               </form>
   

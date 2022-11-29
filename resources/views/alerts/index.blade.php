@@ -44,9 +44,11 @@
                 <div>
                     <h2>Performed tasks</h2>
                     <div class="tasks ready">
+                        
                         @if(count($data["compalerts"]) == 0)
                             <h2 style="color: black">No tasks</h2>
                         @endif
+                        
                         @foreach($data["compalerts"] as $alert)
                         <div class="flextask">         
                             <div class="taskDiv">
@@ -69,7 +71,7 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
-                                    <label class="checked" for="{{$alert->id}}">
+                                    <label data-id="{{ $alert->id }}" class="checked" for="{{$alert->id}}">
                                     <div id="tick_mark1" class="tick_mark ch"></div>
                                 </div>
                             </div>
@@ -107,7 +109,7 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
-                                    <label for="{{$alert->id}}">
+                                    <label data-id="{{ $alert->id }}" for="{{$alert->id}}">
                                         <div id="tick_mark3" class="tick_mark"></div>
                                 </div>
                             </div>
@@ -151,25 +153,27 @@
         });
     });
 
-    let b = document.querySelectorAll('.ready ._checkbox');
-    b.forEach(element => {
-        element.addEventListener('click', () => {
-            // element.setAttribute("checked", "");
-        });
-    });
+    // let b = document.querySelectorAll('.ready ._checkbox');
+    // b.forEach(element => {
+    //     element.addEventListener('click', () => {
+    //         // element.setAttribute("checked", "");
+    //     });
+    // });
 
-    let lab = document.querySelectorAll('.ready label');
-    lab.forEach(element => {
-        element.addEventListener('click', () => {
-            console.log("qw1");
-        });
+    let lab1 = document.querySelectorAll('.ready label');
+    lab1.forEach(element => {
+        element.addEventListener('click',  Change(element.dataset.id));
     });
-
-    let lab = document.querySelectorAll('.fut label');
-    lab.forEach(element => {
-        element.addEventListener('click', () => {
-            console.log("qw2");
+    async function Change(id){
+        console.log(id);
+        const response = await fetch("/index/"+ id +"/update", {
+                method: "POST",
+                headers: { "Accept": "application/json" }
         });
+    }
+    let lab2 = document.querySelectorAll('.fut label');
+    lab2.forEach(element => {
+        element.addEventListener('click',  Change(element.dataset.id));
     });
 </script>
 @endsection

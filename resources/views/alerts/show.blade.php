@@ -4,13 +4,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="/css/login.css" type="text/css">
 <link rel="stylesheet" href="/css/details.css" type="text/css">
+<link rel="stylesheet" href="./css/animate.css" type="text/css">
 <title>Details</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
 @section('content')
 <div class="mainBanner">
     <div class="banner">
-        <div class="navbar animated">
+        <div class="navbar animated fadeInDown">
             <img src="/images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
                 <li><a href="#">Home</a></li>

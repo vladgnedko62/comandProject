@@ -23,6 +23,7 @@ html, body{
 }
 .block .myCarousel{
     max-width: 800px;
+    max-height: 500px;
 }
 .block .infoblock{
     padding: 0 25px;

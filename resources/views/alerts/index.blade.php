@@ -2,14 +2,14 @@
 @section('head')
 <link rel="stylesheet" href="./css/login.css" type="text/css">
 <link rel="stylesheet" href="./css/private.css" type="text/css">
-<!-- <link rel="stylesheet" href="./css/animate.css" type="text/css"> -->
+<link rel="stylesheet" href="./css/animate.css" type="text/css">
 <title>Login</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
 @section('content')
 <div class="mainBanner">
     <div class="banner">
-        <div class="navbar animated">
+        <div class="navbar animated fadeInDown">
             <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
                 <li><a href="#">Home</a></li>
@@ -23,7 +23,7 @@
         </div>
 
 
-        <div class="userInfo">
+        <div class="userInfo animated fadeInUp">
             <h1>Your details</h1>
             <div class="miniblock">
                 <div class="mb">
@@ -70,7 +70,7 @@
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
                                     <label class="checked" for="{{$alert->id}}">
-                                        <div id="tick_mark1" class="tick_mark ch"></div>
+                                    <div id="tick_mark1" class="tick_mark ch"></div>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
 
                 <div>
                     <h2>Active tasks</h2>
-                    <div class="tasks">
+                    <div class="tasks fut">
                     @if(count($data["alerts"]) == 0)
                             <h2 style="color: black">No tasks</h2>
                         @endif
@@ -155,6 +155,20 @@
     b.forEach(element => {
         element.addEventListener('click', () => {
             // element.setAttribute("checked", "");
+        });
+    });
+
+    let lab = document.querySelectorAll('.ready label');
+    lab.forEach(element => {
+        element.addEventListener('click', () => {
+            console.log("qw1");
+        });
+    });
+
+    let lab = document.querySelectorAll('.fut label');
+    lab.forEach(element => {
+        element.addEventListener('click', () => {
+            console.log("qw2");
         });
     });
 </script>

@@ -71,7 +71,7 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
-                                    <label data-id="{{ $alert->id }}" class="checked" for="{{$alert->id}}">
+                                    <label data-id="{{ $alert->id }}" for="{{$alert->id}}">
                                     <div id="tick_mark1" class="tick_mark ch"></div>
                                 </div>
                             </div>
@@ -142,42 +142,54 @@
     </section>
 </div>
 <script>
-    let a = document.querySelectorAll('._checkbox');
-    a.forEach(element => {
-        element.addEventListener('click', () => {
-            if (element.value == "on") {
-                element.value = "off";
-            } else {
-                element.value = "on";
-            }
-        });
-    });
 
-    // let b = document.querySelectorAll('.ready ._checkbox');
-    // b.forEach(element => {
-    //     element.addEventListener('click', () => {
-    //         // element.setAttribute("checked", "");
-    //     });
-    // });
-
+    
     async function Change(id){
         console.log(id);
         const response = await fetch("/completeAlert/"+ id, {
-                method: "POST",
+                method: "GET",
                 headers: { "Accept": "application/json" }
         });
+        // initAll();
     }
-    let lab1 = document.querySelectorAll('.ready label');
+    lab1 = document.querySelectorAll('.tasks label');
     lab1.forEach(element => {
-        element.addEventListener('click', ()=>{
-            Change(element.dataset.id);
-        } );
+            element.addEventListener('click', ()=>{
+                Change(element.dataset.id);
+                location.reload();
+            });
     });
-    let lab2 = document.querySelectorAll('.fut label');
-    lab2.forEach(element => {
-        element.addEventListener('click', ()=>{
-            Change(element.dataset.id);
-        } );
-    });
+
+
+    //let lab1;
+    //let lab2;
+    // initAll();
+    // function initAll(){
+        
+
+    //     lab1 = document.querySelectorAll('.ready label');
+    //     lab2 = document.querySelectorAll('.fut label');
+
+        // lab1.forEach(element => {
+        //     element.addEventListener('click', a1(element));
+        // });
+
+    //     lab2.forEach(element => {
+    //         element.addEventListener('click', a2(element));
+    //     });
+
+        
+    // }
+    // function a1(element){
+    //     let buf = element.parentNode.parentNode.parentNode;
+    //             document.querySelector('.fut').append(buf);
+    //             Change(element.dataset.id);
+    // }
+    // function a2(element){
+    //     let buf = element.parentNode.parentNode.parentNode;
+    //             document.querySelector('.ready').append(buf);
+    //             Change(element.dataset.id);
+    // }
+    
 </script>
 @endsection

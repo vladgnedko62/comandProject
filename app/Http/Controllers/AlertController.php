@@ -138,14 +138,7 @@ public function update(Request $req,$id){
 
 public function completeAlert($id){
     $alert = Alerts::find($id);
-
-    if($alert->complete == false){
-        $alert->complete = true;
-    }
-
-    if($alert->complete == true){
-      $alert->complete = false;
-  }
+    $alert->complete = !$alert->complete;
     $alert->save();
 
 }

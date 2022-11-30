@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="./css/login.css" type="text/css">
 <link rel="stylesheet" href="./css/private.css" type="text/css">
 <link rel="stylesheet" href="./css/animate.css" type="text/css">
+<script src="/jsFiles/profile.js" async defer></script>
 <title>Login</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
@@ -28,40 +29,42 @@
             <div class="miniblock">
                 <div class="mb">
                     <div class="innerminibl">
-                        <img id="img1" src="images/manImg.png"><h2>{{Auth::user()->name}}</h2>
+                        <img id="img1" src="images/manImg.png">
+                        <h2>{{Auth::user()->name}}</h2>
                     </div>
                     <div class="innerminibl">
-                        <img id="img2" src="images/mailImg.png"><p>{{Auth::user()->email}}</p>
-                    </div>      
+                        <img id="img2" src="images/mailImg.png">
+                        <p>{{Auth::user()->email}}</p>
+                    </div>
                 </div>
                 <div>
-                     <a class="btn btn-5" href="{{route('alerts.create')}}">Add new Alert</a>
-                    <a class="btn btn-5" href="/logout">logout</a>          
+                    <a class="btn btn-5" href="{{route('alerts.create')}}">Add new Alert</a>
+                    <a class="btn btn-5" href="/logout">logout</a>
                 </div>
             </div>
-            
+
             <div class="tasksBlock">
                 <div>
                     <h2>Performed tasks</h2>
                     <div class="tasks ready">
-                        
+
                         @if(count($data["compalerts"]) == 0)
-                            <h2 style="color: black">No tasks</h2>
+                        <h2 style="color: black">No tasks</h2>
                         @endif
-                        
+
                         @foreach($data["compalerts"] as $alert)
-                        <div class="flextask">         
+                        <div class="flextask animated" data-id="{{ $alert->id }}" data-complate="{{ $alert->complete }}">
                             <div class="taskDiv">
-                            @foreach($data["images"] as $image)
-                                 @if($image->alert_id==$alert->id)
+                                @foreach($data["images"] as $image)
+                                @if($image->alert_id==$alert->id)
                                 <div onclick="window.location='/index/{{$alert->id}}'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
-                                @endif
-                                @endforeach   
+                                    @endif
+                                    @endforeach
                                     <p class="alertInfo">{{$alert->alert}}</p>
                                 </div>
                                 <div class="tagdate">
                                     @foreach($data["tags"] as $tag)
-                                     @if($tag->id == $alert->tag_id)
+                                    @if($tag->id == $alert->tag_id)
                                     <p class="tag">{{$tag->name}}</p>
                                     @endif
                                     @endforeach
@@ -71,34 +74,34 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
-                                    <label data-id="{{ $alert->id }}" for="{{$alert->id}}">
-                                    <div id="tick_mark1" class="tick_mark ch"></div>
+                                    <label for="{{$alert->id}}">
+                                        <div id="tick_mark{{ $alert->id }}" class="tick_mark ch"></div>
                                 </div>
                             </div>
                         </div>
-                       @endforeach
+                        @endforeach
                     </div>
                 </div>
 
                 <div>
                     <h2>Active tasks</h2>
                     <div class="tasks fut">
-                    @if(count($data["alerts"]) == 0)
-                            <h2 style="color: black">No tasks</h2>
+                        @if(count($data["alerts"]) == 0)
+                        <h2 style="color: black">No tasks</h2>
                         @endif
-                    @foreach($data["alerts"] as $alert)
-                    <div class="flextask">
+                        @foreach($data["alerts"] as $alert)
+                        <div class="flextask animated" data-id="{{ $alert->id }}" data-complate="{{ $alert->complete }}">
                             <div class="taskDiv">
-                            @foreach($data["images"] as $image)
-                                 @if($image->alert_id==$alert->id)
+                                @foreach($data["images"] as $image)
+                                @if($image->alert_id==$alert->id)
                                 <div onclick="window.location='/index/{{$alert->id}}'" style="background-image: url('{{asset('storage/images/'.$image->image)}}')" class="task">
-                                @endif
-                                @endforeach   
+                                    @endif
+                                    @endforeach
 
                                     <p class="alertInfo">{{$alert->alert}}</p>
                                 </div>
                                 <div class="tagdate">
-                                @foreach($data["tags"] as $tag)
+                                    @foreach($data["tags"] as $tag)
                                     @if($tag->id == $alert->tag_id)
                                     <p class="tag">{{$tag->name}}</p>
                                     @endif
@@ -110,13 +113,13 @@
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
                                     <label data-id="{{ $alert->id }}" for="{{$alert->id}}">
-                                        <div id="tick_mark3" class="tick_mark"></div>
+                                        <div id="tick_mark{{ $alert->id }}" class="tick_mark"></div>
                                 </div>
                             </div>
                         </div>
-                          @endforeach 
+                        @endforeach
                     </div>
-                 
+
 
                 </div>
             </div>
@@ -141,9 +144,7 @@
         </p>
     </section>
 </div>
-<script>
-
-    
+<!-- <script>
     async function Change(id){
         console.log(id);
         const response = await fetch("/completeAlert/"+ id, {
@@ -191,5 +192,5 @@
     //             Change(element.dataset.id);
     // }
     
-</script>
+</script> -->
 @endsection

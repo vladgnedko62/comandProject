@@ -38,6 +38,7 @@ class AlertController extends Controller
      $alert->start_date =  $req->get("startDate");
      $alert->end_date =  $req->get("endDate");
      $alert->complete = false;
+     $alert->isMail = false;
      $alert->created_at = new DateTime();
 
      $alert->save();

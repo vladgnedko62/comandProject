@@ -3,8 +3,9 @@
 namespace App\Console\Commands;
 use App\Models\Alerts;
 use App\Notifications\AlertNotif;
-
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Console\Command;
+use App\Mail\AlertMail;
 
 class SendAlertCommand extends Command
 {
@@ -30,12 +31,12 @@ class SendAlertCommand extends Command
     public function handle()
     {
         $alerts = Alerts::with('user')->where('end_date','<=',now()->toDateTimeString())->where('isMail',false)->get();
-
+        
         foreach($alerts as $alert){
-               $alert->user->notify(new AlertNotif($alert));
-                $alert->isMail = true;
-                $alert->save();
-              // $alert->update(['reminder_at'=>NULL]);
+            Mail::send(new AlertMail($alert));
+               $alert->isMail = true;
+               $alert->save();
+           
         }
         return 0;
     }

@@ -10,6 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 use App\Models\Alerts;
+use App\Models\Images;
 
 class AlertMail extends Mailable
 {
@@ -50,11 +51,14 @@ class AlertMail extends Mailable
      */
     public function content()
     {
+        $images = Images::all()->where('alert_id',$this->alert->id);
+   
+
         return new Content(
             view: 'alerts.emailView',
             with: [
                 'alertName' => $this->alert->alert,
-          
+                'images' => $images,
             ],
         );
     }

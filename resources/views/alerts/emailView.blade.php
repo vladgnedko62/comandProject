@@ -13,6 +13,13 @@
 <table style='width:80%; '>
     <tr>
         <td>
+            <h1 style=''>{{$images[0]->image}}</h1>
+        </td>
+    </tr>
+</table>
+<table style='width:80%; '>
+    <tr>
+        <td>
            <a href="#">Go to Site</a>
         </td>
     </tr>

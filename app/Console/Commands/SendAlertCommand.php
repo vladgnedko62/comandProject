@@ -6,7 +6,7 @@ use App\Notifications\AlertNotif;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Console\Command;
 use App\Mail\AlertMail;
-
+use Carbon\Carbon;
 class SendAlertCommand extends Command
 {
     /**
@@ -30,8 +30,7 @@ class SendAlertCommand extends Command
      */
     public function handle()
     {
-        $alerts = Alerts::with('user')->where('end_date','<=',now()->toDateTimeString())->where('isMail',false)->get();
-        
+        $alerts = Alerts::with('user')->where('end_date','<=',Carbon::now())->where('isMail',false)->get(); 
         foreach($alerts as $alert){
             Mail::send(new AlertMail($alert));
                $alert->isMail = true;

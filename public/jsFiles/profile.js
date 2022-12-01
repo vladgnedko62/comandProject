@@ -3,22 +3,14 @@
 class ProfileAlerts {
 
      init() {
-        let tasks = document.querySelectorAll(".checkboxDiv>div>label").forEach(function (el) {
-            el.classList.contains
-            el.addEventListener('click',new ProfileAlerts().clickLS(el));
-            let e=el.parentNode.parentNode.parentNode;
-            let complete = e.dataset.complate;
-            let id = e.dataset.id; 
-            const response =  fetch("/completeAlert/" + id, {
-                method: "GET",
-                headers: { "Accept": "application/json" }
-            });
-
-        });
+      let labels=  document.querySelectorAll(".checkboxDiv>div>label");
+      labels.forEach(element => {
+        element.addEventListener('click',function(e){new ProfileAlerts().clickLS(e.target)});
+      });
     }
 
    clickLS(el){
-    console.dir(el);
+   console.dir(el);
     let e=null;
     if(el.classList.contains("tick_mark")){
         e=el.parentNode.parentNode.parentNode.parentNode;

@@ -153,6 +153,9 @@ a{
     -webkit-transition: background 0.1s ease-in-out;
     transition: background 0.1s ease-in-out;
   }
+  .innerminibl p{
+    margin-left: 10px;
+  }
   .toggle-pill input[type="checkbox"] + label:before {
     content: "";
     display: block;
@@ -325,7 +328,6 @@ a{
     align-content: center;
     justify-content: space-between;
   }
-
   .miniblock #img1{
     filter: invert(); 
     display: block;

@@ -13,7 +13,10 @@
 <table style='width:80%; '>
     <tr>
         <td>
-            <h1 style=''>{{$images[0]->image}}</h1>
+            @foreach($images as $image)
+            <img src="localhost/{{$image->image}}" alt="">
+       
+           @endforeach
         </td>
     </tr>
 </table>

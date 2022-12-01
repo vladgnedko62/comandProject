@@ -14,7 +14,7 @@ class RegisterController extends Controller
 {
     public function save(Request $req){
         if(Auth::check()){
-            return redirect(route(name:'user.private'));
+            return redirect(route(name:'alerts.index'));
         }
 
 

@@ -92,7 +92,7 @@ a{
 }
 .tasks{
     border-radius: 5px;
-    max-height: 800px;
+    /* max-height: 800px; */
     overflow: hidden;
     width: 90%;
     padding: 7px;

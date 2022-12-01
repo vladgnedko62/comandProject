@@ -12,8 +12,7 @@
         <div class="navbar animated">
             <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Notifications</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/login">Log in</a></li>
             </ul>
         </div>

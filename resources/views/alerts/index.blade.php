@@ -12,8 +12,7 @@
         <div class="navbar animated fadeInDown">
             <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Notifications</a></li>
+                <li><a href="/">Home</a></li>
                 @if(Auth::user()!=null)
                 <li><a href="/login">{{Auth::user()->name}}</a></li>
                 @else

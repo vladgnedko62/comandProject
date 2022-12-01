@@ -51,7 +51,7 @@ class AlertNotif extends Notification
         // ->line('The introduction to the notification.')
         // ->action('Notification Action', url('/'))
         // ->line('Thank you for using our application!');
-        return Mail::send(new AlertMail($this->alert));
+        // return Mail::send(new AlertMail($this->alert));
 
     }
 

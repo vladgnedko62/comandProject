@@ -13,6 +13,16 @@
 <table style='width:80%; '>
     <tr>
         <td>
+            @foreach($images as $image)
+            <img src="localhost/{{$image->image}}" alt="">
+       
+           @endforeach
+        </td>
+    </tr>
+</table>
+<table style='width:80%; '>
+    <tr>
+        <td>
            <a href="#">Go to Site</a>
         </td>
     </tr>

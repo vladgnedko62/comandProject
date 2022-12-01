@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="./css/login.css" type="text/css">
 <link rel="stylesheet" href="./css/private.css" type="text/css">
 <link rel="stylesheet" href="./css/animate.css" type="text/css">
-<script src="/jsFiles/profile.js" async defer></script>
 <title>Login</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endSection
@@ -74,7 +73,7 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
-                                    <label for="{{$alert->id}}">
+                                    <label id="{{$alert->id}}" for="{{$alert->id}}">
                                         <div id="tick_mark{{ $alert->id }}" class="tick_mark ch"></div>
                                 </div>
                             </div>
@@ -112,8 +111,8 @@
                             <div class="checkboxDiv">
                                 <div>
                                     <input type="checkbox" id="{{$alert->id}}" class="_checkbox">
-                                    <label data-id="{{ $alert->id }}" for="{{$alert->id}}">
-                                        <div id="tick_mark{{ $alert->id }}" class="tick_mark"></div>
+                                    <label  data-id="{{ $alert->id }}" for="{{$alert->id}}">
+                                        <div   id="tick_mark{{ $alert->id }}" class="tick_mark"></div>
                                 </div>
                             </div>
                         </div>
@@ -144,53 +143,5 @@
         </p>
     </section>
 </div>
-<!-- <script>
-    async function Change(id){
-        console.log(id);
-        const response = await fetch("/completeAlert/"+ id, {
-                method: "GET",
-                headers: { "Accept": "application/json" }
-        });
-        // initAll();
-    }
-    lab1 = document.querySelectorAll('.tasks label');
-    lab1.forEach(element => {
-            element.addEventListener('click', ()=>{
-                Change(element.dataset.id);
-                location.reload();
-            });
-    });
-
-
-    //let lab1;
-    //let lab2;
-    // initAll();
-    // function initAll(){
-        
-
-    //     lab1 = document.querySelectorAll('.ready label');
-    //     lab2 = document.querySelectorAll('.fut label');
-
-        // lab1.forEach(element => {
-        //     element.addEventListener('click', a1(element));
-        // });
-
-    //     lab2.forEach(element => {
-    //         element.addEventListener('click', a2(element));
-    //     });
-
-        
-    // }
-    // function a1(element){
-    //     let buf = element.parentNode.parentNode.parentNode;
-    //             document.querySelector('.fut').append(buf);
-    //             Change(element.dataset.id);
-    // }
-    // function a2(element){
-    //     let buf = element.parentNode.parentNode.parentNode;
-    //             document.querySelector('.ready').append(buf);
-    //             Change(element.dataset.id);
-    // }
-    
-</script> -->
+<script src="/jsFiles/profile.js" ></script>
 @endsection

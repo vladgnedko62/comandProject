@@ -12,7 +12,7 @@
 @section('content')
 <div class="mainBanner">
     <div class="banner">
-        <div class="navbar animated fadeInDown" >
+        <div style="margin-top: 30px" class="navbar animated fadeInDown" >
                     <img src="images/logoMain.png" class="logo" onclick="javascript:location.href='/'">                    
             <ul>
                 <li><a href="/">Home</a></li>

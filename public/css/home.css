@@ -212,6 +212,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    border-radius: 7px;
 }
 .About img{
     filter: invert(); 
@@ -226,6 +227,7 @@ html {
     font-weight: 600;
     display: block;
     padding-left: 35px;
+    
 }
 .vl {
     filter: invert(); 

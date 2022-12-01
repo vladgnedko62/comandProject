@@ -178,7 +178,18 @@ a{
         grid-template-columns: 1fr;
     }
 }
-
+@media screen and (max-width:900px) {
+  .miniblock{
+      display: flex;
+      flex-direction: column;
+  }
+  .mb{
+    margin: 0 auto 15px;
+  }
+  .innerminibl{
+    justify-content: none;
+  }
+}
 ._checkbox {
     display: none;
   }
@@ -314,9 +325,7 @@ a{
     align-content: center;
     justify-content: space-between;
   }
-  .mb{
-    width: 25%;
-  }
+
   .miniblock #img1{
     filter: invert(); 
     display: block;
